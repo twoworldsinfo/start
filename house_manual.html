@@ -10,23 +10,16 @@
     }
   </style>
   <script defer>
-    window.addEventListener("load", () => {
-      const password = "flo123";
-      const entry = prompt("Enter password to access the House Manual:");
-      console.log("🛠️ User entered:", entry);
-      
-      const content = document.getElementById("protectedContent");
-      console.log("🛠️ protectedContent element:", content);
-      
-      if (entry === password) {
-        alert("Correct password – showing content");
-        content.style.display = "block";
-        console.log("🛠️ display set to:", getComputedStyle(content).display);
-      } else {
-        alert("Incorrect password – content stays hidden");
-      }
-    });
-  </script>
+  window.addEventListener("load", () => {
+    const password = "flo123";    // your chosen password
+    const entry = prompt("Enter password to access the House Manual:");
+    if (entry === password) {
+      document.getElementById("protectedContent").style.display = "block";
+    } else {
+      alert("Incorrect password. Access denied.");
+    }
+  });
+</script>
 </head>
 <body>
   <div id="protectedContent">
@@ -36,3 +29,4 @@
   </div>
 </body>
 </html>
+
