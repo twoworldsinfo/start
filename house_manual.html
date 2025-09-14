@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>House Manual</title>
+  <style>
+    #protectedContent { display: none; padding: 20px; }
+  </style>
+</head>
+<body>
+  <script>
+    const password = "flo123";  // change as needed
+    const userInput = prompt("Enter password to access the House Manual:");
+    if (userInput === password) {
+      document.getElementById("protectedContent").style.display = "block";
+    } else {
+      alert("Incorrect password. Access denied.");
+    }
+  </script>
+
+  <div id="protectedContent">
+    <h1>House Manual</h1>
+    <!-- Your house-manual content will go here -->
+  </div>
+</body>
+</html>
