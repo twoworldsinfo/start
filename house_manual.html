@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>House Manual</title>
-  <style>
-    #protectedContent { display: none; padding: 20px; }
-  </style>
-</head>
-<body>
-  <script>
-    const password = "flo123";  // change this to your chosen password
-    const userInput = prompt("Enter password to access the House Manual:");
-    if (userInput === password) {
-      document.getElementById("protectedContent").style.display = "block";
-    } else {
-      alert("Incorrect password. Access denied.");
-    }
-  </script>
+<script>
+  const password = "flo123";
+  const userInput = prompt("Enter password…");
+  if (userInput === password) {
+    document.getElementById("protectedContent").style.display = "block";
+  }
+</script>
 
-  <div id="protectedContent">
-    <h1>House Manual</h1>
+<div id="protectedContent" style="display:none">
+      <h1>House Manual</h1>
     <p>Welcome to Two Worlds! Here’s everything you need to know about the apartment:</p>
     <ul>Pool & Sauna Rules
  📍 Open 7:00–22:00
@@ -115,9 +103,4 @@ Dishwasher
  Located:
  • Under the kitchen sink
  • In/Behind the wooden cabinet next to the stairs
-  
-
-    </ul>
-  </div>
-</body>
-</html>
+</div>
