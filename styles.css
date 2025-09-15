@@ -1,7 +1,7 @@
 /* 1. Import Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* NEW: Center main content wrapper */
+/* 2. Center main content wrapper */
 .container {
   max-width: 700px;
   margin: 0 auto;
@@ -9,13 +9,14 @@
   text-align: left;
 }
 
-/* 2. Base reset + typography */
+/* 3. Base reset + typography */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* 4. Body */
 body {
   margin: 0;
   padding: 1em;
@@ -26,12 +27,12 @@ body {
   background-color: #fdfdfd;
 }
 
-/* 3. Section spacing */
+/* 5. Section spacing */
 section {
   margin-bottom: 2em;
 }
 
-/* 4. Headings */
+/* 6. Headings */
 h1, h2, h3 {
   margin: 0 0 0.5em;
   font-weight: 700;
@@ -51,12 +52,12 @@ h3 {
   font-size: 1.25rem;
 }
 
-/* 5. Paragraphs */
+/* 7. Paragraphs */
 p {
   margin: 0 0 1.25em;
 }
 
-/* 6. Lists */
+/* 8. Lists */
 ul, ol {
   margin: 0 0 1.25em 1.5em;
   padding: 0;
@@ -66,7 +67,7 @@ li {
   margin-bottom: 0.5em;
 }
 
-/* 7. Page header (title + description) */
+/* 9. Page header */
 .page-header {
   text-align: center;
   margin: 2em 0 3em;
@@ -79,7 +80,7 @@ li {
   color: #555;
 }
 
-/* 8. Subscribe box */
+/* 10. Subscribe box base */
 .subscribe-box {
   margin-top: 1em;
   max-width: 300px;
@@ -104,12 +105,13 @@ li {
   padding: 8px 16px;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
+  background-color: #f1c40f; /* Yellow buttons */
+  color: #333;
   border: none;
   border-radius: 4px;
 }
 
+/* 11. Status messages */
 .status {
   font-size: 0.9rem;
   font-style: italic;
@@ -119,12 +121,7 @@ li {
 }
 
 .sending {
-  display: none;
   color: #888;
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-left: 0.5em;
-  white-space: nowrap;
 }
 
 .confirmation {
@@ -142,10 +139,9 @@ li {
   }
 }
 
-/* 9. Safety section */
-/* Removed max-width and margin: now inherits centering from .container */
+/* 12. Safety section */
 .safety-container {
-  padding: 1em 0;    /* only top/bottom padding */
+  padding: 1em 0; /* only top/bottom padding */
   line-height: 1.6;
 }
 
@@ -163,30 +159,39 @@ li {
   margin: 0.5em 0 1em 1.5em;
 }
 
-/* 10. Navigation menu styling */
-nav {
-  margin-bottom: 1em;        /* space below nav to separate subscribe-top */
-}
-
+/* 13. Navigation menu styling */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;        /* center the links */
+  text-align: center;
 }
 
 nav ul li {
-  display: inline-block;     /* inline for horizontal layout */
+  display: inline-block;
 }
 
 nav ul li + li::before {
-  content: "|";              /* separator */
-  margin: 0 0.5em;           /* space around the pipe */
-  color: #888;               /* pipe color */
+  content: "|";
+  margin: 0 0.5em;
+  color: #888;
 }
 
-/* 11. Top subscribe section spacing */
-#subscribe-top {
-  margin: 0 auto 2em;        /* ensure it sits below the centered nav */
-  text-align: center;        /* center its contents if desired */
+/* 14. Top & Bottom Subscribe sections alignment */
+#subscribe-top,
+#subscribe-bottom {
+  text-align: center;
+}
+
+/* 15. Back-to-top arrow */
+.back-to-top {
+  float: right;
+  font-size: 1.25rem;
+  text-decoration: none;
+  margin-top: -0.5em;
+}
+
+/* 16. General link sizing */
+a {
+  font-size: 1.1rem;
 }
