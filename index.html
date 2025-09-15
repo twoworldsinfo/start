@@ -295,6 +295,65 @@
   });
 </script>
 
+    <section id="subscribe">
+  <h2>Subscribe to Our Email List</h2>
+  <div class="subscribe-box side-button">
+    <input
+      type="email"
+      id="emailInput"
+      placeholder="you@example.com"
+      required
+    />
+    <button id="subscribeButton">Enter</button>
+  </div>
+  <p id="confirmation" class="confirmation">Confirmed!</p>
+</section>
+
+<style>
+  .subscribe-box.side-button {
+    display: flex;
+    max-width: 300px;
+  }
+  .subscribe-box.side-button input {
+    flex: 1;
+    padding: 8px;
+  }
+  .subscribe-box.side-button button {
+    margin-left: 0.5em;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  .confirmation {
+    display: none;
+    color: green;
+    margin-top: 0.5em;
+  }
+</style>
+
+<script>
+  const input = document.getElementById('emailInput');
+  const button = document.getElementById('subscribeButton');
+  const confirmation = document.getElementById('confirmation');
+
+  async function subscribe() {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return;
+    }
+    // TODO: send input.value to your backend or Google Apps Script URL
+    confirmation.style.display = 'block';
+    input.value = '';
+  }
+
+  button.addEventListener('click', subscribe);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      subscribe();
+    }
+  });
+</script>
+
 
 
 
