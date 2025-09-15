@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Two Worlds Private Guide to Rio</title>
+  <title>Two World´s Private Guide to Rio</title>
   <style>
     .page-header {
       text-align: center;
@@ -55,8 +55,8 @@
     </ul>
   </nav>
 
- <section id="subscribe">
-  Enter your Email here for the latest additions and current events
+<section id="subscribe">
+  <p>Enter your Email here for the latest additions and current events</p>
   <div class="subscribe-box side-button">
     <input
       type="email"
@@ -69,71 +69,6 @@
   <p id="confirmation" class="confirmation">Confirmed!</p>
 </section>
 
-<style>
-  .subscribe-box.side-button {
-    display: flex;
-    max-width: 300px;
-  }
-  .subscribe-box.side-button input {
-    flex: 1;
-    padding: 8px;
-  }
-  .subscribe-box.side-button button {
-    margin-left: 0.5em;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-  .confirmation {
-    display: none;
-    color: green;
-    margin-top: 0.5em;
-  }
-</style>
-
-<script>
-  const input = document.getElementById('emailInput');
-  const button = document.getElementById('subscribeButton');
-  const confirmation = document.getElementById('confirmation');
-
-  // Replace this with your actual Google Apps Script Web App URL
-  const endpoint = 'https://script.google.com/macros/library/d/1rF7660xiuzRb9940a_40fnjuufvZN6VVvou6gcmSE6IOBdED6w6TPdE7/1';
-
-  async function subscribe() {
-    if (!input.checkValidity()) {
-      input.reportValidity();
-      return;
-    }
-
-    const formData = new URLSearchParams();
-    formData.append('Email', input.value);
-
-    try {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        body: formData
-      });
-
-      const result = await res.json();
-      if (result.result === 'success') {
-        confirmation.style.display = 'block';
-        input.value = '';
-      } else {
-        throw new Error(result.error || 'Unknown error');
-      }
-    } catch (err) {
-      alert('Something went wrong. Please try again later.');
-      console.error(err);
-    }
-  }
-
-  button.addEventListener('click', subscribe);
-  input.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      subscribe();
-    }
-  });
-</script>
   <!-- Sections -->
 
   <section id="welcome">
@@ -308,57 +243,40 @@
     <h2>Tours</h2>
     <!-- Content coming soon -->
   </section>
-
-</html>
-
-    <section id="subscribe">
-  <h2>Enter your Email here for the latest additions and current events</h2>
-  <div class="subscribe-box side-button">
-    <input
-      type="email"
-      id="emailInput"
-      placeholder="you@example.com"
-      required
-    />
-    <button id="subscribeButton">Enter</button>
-  </div>
-  <p id="confirmation" class="confirmation">Confirmed!</p>
-</section>
-
-<style>
-  .subscribe-box.side-button {
-    display: flex;
-    max-width: 300px;
-  }
-  .subscribe-box.side-button input {
-    flex: 1;
-    padding: 8px;
-  }
-  .subscribe-box.side-button button {
-    margin-left: 0.5em;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-  .confirmation {
-    display: none;
-    color: green;
-    margin-top: 0.5em;
-  }
-</style>
-
 <script>
   const input = document.getElementById('emailInput');
   const button = document.getElementById('subscribeButton');
   const confirmation = document.getElementById('confirmation');
+
+  // Replace this with your actual Google Apps Script Web App URL
+  const endpoint = 'https://script.google.com/macros/library/d/1rF7660xiuzRb9940a_40fnjuufvZN6VVvou6gcmSE6IOBdED6w6TPdE7/1';
 
   async function subscribe() {
     if (!input.checkValidity()) {
       input.reportValidity();
       return;
     }
-    // TODO: send input.value to your backend or Google Apps Script URL
-    confirmation.style.display = 'block';
-    input.value = '';
+
+    const formData = new URLSearchParams();
+    formData.append('Email', input.value);
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await res.json();
+      if (result.result === 'success') {
+        confirmation.style.display = 'block';
+        input.value = '';
+      } else {
+        throw new Error(result.error || 'Unknown error');
+      }
+    } catch (err) {
+      alert('Something went wrong. Please try again later.');
+      console.error(err);
+    }
   }
 
   button.addEventListener('click', subscribe);
@@ -369,9 +287,7 @@
     }
   });
 </script>
-
-
-
+</html>
 
 
 
