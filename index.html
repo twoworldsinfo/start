@@ -213,7 +213,40 @@
     <!-- Content coming soon -->
   </section>
 
-
-
-
 </html>
+
+<section id="subscribe">
+  <h2>Subscribe to Our Email List</h2>
+  <input
+    type="email"
+    id="emailInput"
+    placeholder="you@example.com"
+    required
+    style="padding:8px; width:100%; max-width:300px;"
+  />
+  <p
+    id="confirmation"
+    style="display:none; color:green; margin-top:.5em;"
+  >
+    Confirmed!
+  </p>
+</section>
+
+<script>
+  const input = document.getElementById('emailInput');
+  const confirmation = document.getElementById('confirmation');
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      // Validate email format
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        return;
+      }
+      // Show confirmation and clear field
+      confirmation.style.display = 'block';
+      input.value = '';
+    }
+  });
+</script>
