@@ -1,91 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Two Worlds Private Guide to Rio</title>
-  <link rel="stylesheet" href="styles.css" />
-
+  <meta charset="UTF-8">
+  <title>Two World´s Private Guide to Rio</title>
   <style>
-    /* Subscribe‐box layout */
-    .subscribe-box.side-button {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-      flex-wrap: wrap;
-      max-width: 400px;
-      position: relative;
-    }
-    .subscribe-box input {
-      flex: 1;
-      padding: 8px;
-      font-size: 1rem;
-    }
-    .subscribe-box button {
-      padding: 8px 16px;
-      font-size: 1rem;
-      cursor: pointer;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-    }
-
-    /* Status messages */
-    .status {
-      font-size: 0.9rem;
-      font-style: italic;
-      margin-left: 0.5em;
-      display: none;
-      white-space: nowrap;
-    }
-    .sending {
-      color: #888;
-    }
-    .confirmation {
-      color: green;
-      font-weight: bold;
-      animation: fadeScale 0.6s ease forwards;
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    @keyframes fadeScale {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* Safety section */
-    .safety-container {
+    /* → NEW: center-column wrapper for main content */
+    .container {
       max-width: 700px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0 1em;
-      line-height: 1.6;
+      text-align: left;
     }
-    .safety-container h2,
-    .safety-container h3 {
-      margin-top: 2em;
+
+    .page-header {
+      text-align: center;
+      margin: 3em 0 2em;
+    }
+    .page-header h1 {
+      font-size: 2.5rem;
       margin-bottom: 0.5em;
+      line-height: 1.2;
     }
-    .safety-container p {
-      margin-bottom: 1em;
-    }
-    .safety-container ul {
-      margin: 0.5em 0 1em 1.5em;
+    .page-description {
+      color: #444;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
     }
   </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- Header -->
   <section class="page-header">
     <h1>Two Worlds Private Guide to Rio</h1>
     <p class="page-description">
-      This is not a complete guide; it only contains places that I have personally
-      been to and approved as high-quality / worth going.
+      This is not a complete guide, it only contains places that I have personally been to and have approved to be of high quality / worth going.
     </p>
   </section>
 
-  <!-- Nav -->
+  <!-- Navigation Menu -->
   <nav>
     <ul>
       <li><a href="#welcome">Welcome</a></li>
@@ -105,22 +60,24 @@
     </ul>
   </nav>
 
-  <!-- Top Subscribe Box -->
-  <section id="subscribe-top">
-    <h2>Subscribe</h2>
-    <p>Enter your Email here for the latest additions and current events</p>
-    <div class="subscribe-box side-button">
-      <input
-        type="email"
-        id="emailInputTop"
-        placeholder="you@example.com"
-        required
-      />
-      <button id="subscribeButtonTop">Enter</button>
-      <span id="sendingTop" class="status sending">Sending…</span>
-      <span id="confirmationTop" class="status confirmation">Confirmed!</span>
-    </div>
-  </section>
+  <!-- START container: centers everything below -->
+  <div class="container">
+
+    <section id="subscribe-top">
+      <h2>Subscribe</h2>
+      <p>Enter your Email here for the latest additions and current events</p>
+      <div class="subscribe-box side-button">
+        <input type="email" id="emailInputTop" placeholder="you@example.com" required />
+        <button id="subscribeButtonTop">Enter</button>
+        <span id="sendingTop" class="status sending">Sending…</span>
+        <span id="confirmationTop" class="status confirmation">Confirmed!</span>
+      </div>
+    </section>
+
+    <!-- Sections -->
+
+    <section id="welcome">
+     
 
   <!-- Welcome -->
   <section id="welcome">
@@ -410,3 +367,4 @@
   </script>
 </body>
 </html>
+
