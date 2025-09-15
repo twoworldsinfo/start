@@ -183,3 +183,7 @@ nav ul li + li::before {
 a {
   font-size: 1.1rem;
 }
+#subscribe-top .back-to-top,
+#subscribe-bottom .back-to-top {
+  display: none;
+}
