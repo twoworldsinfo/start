@@ -27,6 +27,64 @@
     <h1>Two Worlds Private Guide to Rio</h1>
     <p class="page-description">
       This is not a complete guide, it only contains places that I have personally been to and have approved to be of high quality / worth going.
+          <section id="subscribe">
+  Enter your Email here for the latest additions and current events
+  <div class="subscribe-box side-button">
+    <input
+      type="email"
+      id="emailInput"
+      placeholder="you@example.com"
+      required
+    />
+    <button id="subscribeButton">Enter</button>
+  </div>
+  <p id="confirmation" class="confirmation">Confirmed!</p>
+</section>
+
+<style>
+  .subscribe-box.side-button {
+    display: flex;
+    max-width: 300px;
+  }
+  .subscribe-box.side-button input {
+    flex: 1;
+    padding: 8px;
+  }
+  .subscribe-box.side-button button {
+    margin-left: 0.5em;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  .confirmation {
+    display: none;
+    color: green;
+    margin-top: 0.5em;
+  }
+</style>
+
+<script>
+  const input = document.getElementById('emailInput');
+  const button = document.getElementById('subscribeButton');
+  const confirmation = document.getElementById('confirmation');
+
+  async function subscribe() {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return;
+    }
+    // TODO: send input.value to your backend or Google Apps Script URL
+    confirmation.style.display = 'block';
+    input.value = '';
+  }
+
+  button.addEventListener('click', subscribe);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      subscribe();
+    }
+  });
+</script>
     </p>
   </section>
 </body>
@@ -230,73 +288,8 @@
 
 </html>
 
-<section id="subscribe">
-  Enter your Email here for the latest additions and current events
-  <div class="subscribe-box embedded-button">
-    <input
-      type="email"
-      id="emailInputEmbedded"
-      placeholder="you@example.com"
-      required
-    />
-    <button id="subscribeButtonEmbedded">Enter</button>
-  </div>
-  <p id="confirmationEmbedded" class="confirmation">Confirmed!</p>
-</section>
-
-<style>
-  .subscribe-box.embedded-button {
-    position: relative;
-    max-width: 300px;
-  }
-  .subscribe-box.embedded-button input {
-    width: 100%;
-    padding: 8px 4em 8px 8px; /* room for the button */
-  }
-  .subscribe-box.embedded-button button {
-    position: absolute;
-    right: 0.25em;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0.5em 1em;
-    border: none;
-    background: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  .confirmation {
-    display: none;
-    color: green;
-    margin-top: 0.5em;
-  }
-</style>
-
-<script>
-  const inputE = document.getElementById('emailInputEmbedded');
-  const buttonE = document.getElementById('subscribeButtonEmbedded');
-  const confirmE = document.getElementById('confirmationEmbedded');
-
-  async function subscribeE() {
-    if (!inputE.checkValidity()) {
-      inputE.reportValidity();
-      return;
-    }
-    // TODO: send inputE.value to your backend or Google Apps Script URL
-    confirmE.style.display = 'block';
-    inputE.value = '';
-  }
-
-  buttonE.addEventListener('click', subscribeE);
-  inputE.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      subscribeE();
-    }
-  });
-</script>
-
     <section id="subscribe">
-  <h2>Subscribe to Our Email List</h2>
+  <h2>Enter your Email here for the latest additions and current events</h2>
   <div class="subscribe-box side-button">
     <input
       type="email"
@@ -353,6 +346,7 @@
     }
   });
 </script>
+
 
 
 
