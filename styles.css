@@ -183,26 +183,26 @@ a {
 
 /* 16. Mobile styles */
 @media (max-width: 600px) {
-  /* Make all links larger */
+  /* Make all links larger on mobile */
   a {
     font-size: 1.4rem;
   }
 
-  /* Make nav links larger */
+  /* Make navigation links larger */
   nav ul li a {
-    font-size: 1.5rem;
-    padding: 0.5em;
+    font-size: 1.6rem;
+    padding: 0.6em;
   }
 
-  /* Make back-to-top arrows bigger */
+  /* Make back-to-top arrows bigger and properly aligned */
   .back-to-top {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     display: block;
     text-align: right;
     margin-top: 1em;
   }
 
-  /* Fix layout alignment */
+  /* Fix layout so content fills screen and is left-aligned */
   .container {
     max-width: 100%;
     padding: 0 1em;
@@ -213,5 +213,10 @@ a {
   #subscribe-top,
   #subscribe-bottom {
     text-align: left;
+  }
+
+  .page-description {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
