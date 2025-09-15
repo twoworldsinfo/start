@@ -1,6 +1,14 @@
 /* 1. Import Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+/* NEW: Center main content wrapper */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1em;
+  text-align: left;
+}
+
 /* 2. Base reset + typography */
 *,
 *::before,
@@ -79,10 +87,6 @@ li {
 
 .subscribe-box.side-button {
   display: flex;
-}
-
-.subscribe-box.side-button {
-  display: flex;
   align-items: center;
   gap: 0.5em;
   flex-wrap: wrap;
@@ -138,4 +142,23 @@ li {
   }
 }
 
+/* 9. Safety section */
+/* Removed max-width and margin: now inherits centering from .container */
+.safety-container {
+  padding: 0 1em;
+  line-height: 1.6;
+}
 
+.safety-container h2,
+.safety-container h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.safety-container p {
+  margin-bottom: 1em;
+}
+
+.safety-container ul {
+  margin: 0.5em 0 1em 1.5em;
+}
