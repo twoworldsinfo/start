@@ -9,13 +9,10 @@
   text-align: left;
 }
 
-/* 3. Reset & base typography */
-*,
-*::before,
-*::after {
+/* 3. Reset & Base Typography */
+*, *::before, *::after {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 1em;
@@ -23,10 +20,10 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #333;
-  background-color: #fdfdfd;
+  background: #fdfdfd;
 }
 
-/* 4. Section spacing */
+/* 4. Sections */
 section {
   margin-bottom: 2em;
 }
@@ -42,7 +39,7 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 1.75rem; }
 h3 { font-size: 1.25rem; }
 
-/* 6. Paragraphs & lists */
+/* 6. Text */
 p {
   margin: 0 0 1.25em;
 }
@@ -54,7 +51,7 @@ li {
   margin-bottom: 0.5em;
 }
 
-/* 7. Page header */
+/* 7. Page Header */
 .page-header {
   text-align: center;
   margin: 2em 0 3em;
@@ -66,7 +63,7 @@ li {
   color: #555;
 }
 
-/* 8. Navigation menu */
+/* 8. Navigation */
 nav ul {
   list-style: none;
   margin: 0 0 1em;
@@ -78,25 +75,19 @@ nav ul li {
 }
 nav ul li + li::before {
   content: "|";
-  color: #888;
   margin: 0 0.5em;
+  color: #888;
 }
 nav ul li a {
   font-size: 1.1rem;
 }
 
-/* 9. Subscribe sections */
+/* 9. Subscribe Boxes */
 #subscribe-top,
 #subscribe-bottom {
   text-align: center;
   margin: 0 auto 2em;
 }
-#subscribe-top p,
-#subscribe-bottom p {
-  margin-bottom: 0.5em;
-}
-
-/* 10. Subscribe box */
 .subscribe-box.side-button {
   display: flex;
   flex-wrap: wrap;
@@ -121,7 +112,7 @@ nav ul li a {
   border-radius: 4px;
 }
 
-/* 11. Status messages */
+/* 10. Status Messages */
 .status {
   display: none;
   font-size: 0.9rem;
@@ -129,9 +120,7 @@ nav ul li a {
   margin-left: 0.5em;
   white-space: nowrap;
 }
-.sending {
-  color: #888;
-}
+.sending { color: #888; }
 .confirmation {
   color: green;
   font-weight: bold;
@@ -140,13 +129,10 @@ nav ul li a {
   transform: scale(0.95);
 }
 @keyframes fadeScale {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* 12. Safety section overrides */
+/* 11. Safety Section */
 .safety-container {
   padding: 1em 0;
   line-height: 1.6;
@@ -162,7 +148,7 @@ nav ul li a {
   margin: 0.5em 0 1em 1.5em;
 }
 
-/* 13. Back‐to‐top arrow */
+/* 12. Back-to-Top Arrow */
 .back-to-top {
   float: right;
   font-size: 1.25rem;
@@ -170,54 +156,44 @@ nav ul li a {
   margin-top: -0.5em;
 }
 
-/* 14. General link sizing */
+/* 13. General Links */
 a {
   font-size: 1.1rem;
 }
 
-/* 15. Hide arrows in subscribe sections */
+/* 14. Hide arrows in subscribe sections */
 #subscribe-top .back-to-top,
 #subscribe-bottom .back-to-top {
   display: none;
 }
 
-/* 16. Mobile styles */
+/* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
-  /* Make all links larger on mobile */
+  /* Force the viewport to re-evaluate */
   a {
     font-size: 1.4rem !important;
   }
-
-  /* Make navigation links larger */
   nav ul li a {
     font-size: 1.6rem !important;
     padding: 0.6em !important;
   }
-
-  /* Make back-to-top arrows bigger and properly aligned */
   .back-to-top {
     font-size: 2.4rem !important;
     display: block !important;
     text-align: right !important;
     margin-top: 1em !important;
   }
-
-  /* Fix layout so content fills screen and is left-aligned */
   .container {
     max-width: 100% !important;
     padding: 0 1em !important;
     text-align: left !important;
   }
-
   .page-header,
   #subscribe-top,
   #subscribe-bottom {
     text-align: left !important;
   }
-
   .page-description {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 !important;
   }
 }
-
