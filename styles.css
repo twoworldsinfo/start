@@ -144,7 +144,6 @@ li {
 
 /* 9. Safety section */
 /* Removed max-width and margin: now inherits centering from .container */
-/* After */
 .safety-container {
   padding: 1em 0;    /* only top/bottom padding */
   line-height: 1.6;
@@ -164,3 +163,30 @@ li {
   margin: 0.5em 0 1em 1.5em;
 }
 
+/* 10. Navigation menu styling */
+nav {
+  margin-bottom: 1em;        /* space below nav to separate subscribe-top */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;        /* center the links */
+}
+
+nav ul li {
+  display: inline-block;     /* inline for horizontal layout */
+}
+
+nav ul li + li::before {
+  content: "|";              /* separator */
+  margin: 0 0.5em;           /* space around the pipe */
+  color: #888;               /* pipe color */
+}
+
+/* 11. Top subscribe section spacing */
+#subscribe-top {
+  margin: 0 auto 2em;        /* ensure it sits below the centered nav */
+  text-align: center;        /* center its contents if desired */
+}
