@@ -115,7 +115,12 @@ li {
 }
 
 .sending {
+  display: none;
   color: #888;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-left: 0.5em;
+  white-space: nowrap;
 }
 
 .confirmation {
@@ -132,4 +137,5 @@ li {
     transform: scale(1);
   }
 }
+
 
