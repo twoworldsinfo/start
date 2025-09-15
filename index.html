@@ -61,11 +61,9 @@
   <div class="subscribe-box side-button">
     <input type="email" id="emailInputTop" placeholder="you@example.com" required />
     <button id="subscribeButtonTop">Enter</button>
+    <span id="sendingTop" class="status sending">Sending…</span>
+    <span id="confirmationTop" class="status confirmation">Confirmed!</span>
   </div>
-  <p id="sendingTop" class="sending">Sending…</p>
-  <p id="confirmationTop" class="confirmation">Confirmed!</p>
-
-/p>
 </section>
 
 
@@ -243,16 +241,15 @@
   <section id="tours">
     <h2>Tours</h2>
     <!-- Content coming soon -->
- <section id="subscribe-bottom">
+<section id="subscribe-bottom">
   <h2>Stay Updated</h2>
   <p>Get notified about new content and local events</p>
   <div class="subscribe-box side-button">
     <input type="email" id="emailInputBottom" placeholder="you@example.com" required />
     <button id="subscribeButtonBottom">Enter</button>
+    <span id="sendingBottom" class="status sending">Sending…</span>
+    <span id="confirmationBottom" class="status confirmation">Confirmed!</span>
   </div>
-    <p id="sendingBottom" class="sending">Sending…</p>
-  <p id="confirmationBottom" class="confirmation">Confirmed!</p>
-
 </section>
 
 
@@ -306,6 +303,7 @@
   setupEmailField('emailInputBottom', 'subscribeButtonBottom', 'confirmationBottom');
 </script>
 </html>
+
 
 
 
