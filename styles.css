@@ -111,6 +111,7 @@ li {
   font-style: italic;
   margin-left: 0.5em;
   display: none;
+  white-space: nowrap;
 }
 
 .sending {
@@ -131,3 +132,4 @@ li {
     transform: scale(1);
   }
 }
+
