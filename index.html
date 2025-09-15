@@ -95,14 +95,35 @@
   const button = document.getElementById('subscribeButton');
   const confirmation = document.getElementById('confirmation');
 
+  // Replace this with your actual Google Apps Script Web App URL
+  const endpoint = 'https://script.google.com/macros/library/d/1rF7660xiuzRb9940a_40fnjuufvZN6VVvou6gcmSE6IOBdED6w6TPdE7/1';
+
   async function subscribe() {
     if (!input.checkValidity()) {
       input.reportValidity();
       return;
     }
-    // TODO: send input.value to your backend or Google Apps Script URL
-    confirmation.style.display = 'block';
-    input.value = '';
+
+    const formData = new URLSearchParams();
+    formData.append('Email', input.value);
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await res.json();
+      if (result.result === 'success') {
+        confirmation.style.display = 'block';
+        input.value = '';
+      } else {
+        throw new Error(result.error || 'Unknown error');
+      }
+    } catch (err) {
+      alert('Something went wrong. Please try again later.');
+      console.error(err);
+    }
   }
 
   button.addEventListener('click', subscribe);
@@ -348,6 +369,7 @@
     }
   });
 </script>
+
 
 
 
