@@ -216,18 +216,15 @@
 </html>
 
 <section id="subscribe">
-  <h2>Subscribe to Our Email List</h2>
+ 
   <input
     type="email"
     id="emailInput"
     placeholder="you@example.com"
     required
-    style="padding:8px; width:100%; max-width:300px;"
+    style="padding:8px; max-width:300px; width:100%;"
   />
-  <p
-    id="confirmation"
-    style="display:none; color:green; margin-top:.5em;"
-  >
+  <p id="confirmation" style="display:none; color:green; margin-top:.5em;">
     Confirmed!
   </p>
 </section>
@@ -235,18 +232,37 @@
 <script>
   const input = document.getElementById('emailInput');
   const confirmation = document.getElementById('confirmation');
+  const endpoint = 'https://script.google.com/macros/s/AKfycbzK-BRQnRzB0J_XrkjR9H-hNx-wvQhNCmZENMIu4NtuWjtyQszTVkw1Iqei5O3CJlRHxA/exec';
 
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      // Validate email format
-      if (!input.checkValidity()) {
-        input.reportValidity();
-        return;
+  input.addEventListener('keydown', async e => {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return;
+    }
+
+    // send to your Apps Script web app
+    const formData = new URLSearchParams();
+    formData.append('Email', input.value);
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      });
+      const json = await res.json();
+      if (json.result === 'success') {
+        confirmation.style.display = 'block';
+        input.value = '';
+      } else {
+        throw new Error(json.error);
       }
-      // Show confirmation and clear field
-      confirmation.style.display = 'block';
-      input.value = '';
+    } catch(err) {
+      alert('Oops, something went wrong.');
+      console.error(err);
     }
   });
 </script>
+
