@@ -1,7 +1,7 @@
 /* 1. Import Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* 2. Center main content wrapper */
+/* 2. Container */
 .container {
   max-width: 700px;
   margin: 0 auto;
@@ -9,7 +9,7 @@
   text-align: left;
 }
 
-/* 3. Base reset + typography */
+/* 3. Reset & base typography */
 *,
 *::before,
 *::after {
@@ -38,39 +38,27 @@ h1, h2, h3 {
   line-height: 1.2;
   color: #222;
 }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
 
-h1.page-title {
-  font-size: 2.5rem;
-}
-
-.title-link {
-  text-decoration: underline;
-  color: #007bff;
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/* 6. Paragraphs */
+/* 6. Paragraphs & lists */
 p {
   margin: 0 0 1.25em;
 }
-
-/* 7. Lists */
 ul, ol {
   margin: 0 0 1.25em 1.5em;
   padding: 0;
 }
-
 li {
   margin-bottom: 0.5em;
 }
 
-/* 8. Page header */
+/* 7. Page header */
 .page-header {
   text-align: center;
   margin: 2em 0 3em;
 }
-
 .page-description {
   max-width: 600px;
   margin: 0 auto;
@@ -78,52 +66,51 @@ li {
   color: #555;
 }
 
-/* 9. Navigation menu styling */
+/* 8. Navigation menu */
 nav ul {
   list-style: none;
   margin: 0 0 1em;
   padding: 0;
   text-align: center;
 }
-
 nav ul li {
   display: inline-block;
 }
-
 nav ul li + li::before {
   content: "|";
-  margin: 0 0.5em;
   color: #888;
+  margin: 0 0.5em;
 }
-
 nav ul li a {
   font-size: 1.1rem;
 }
 
-/* 10. Subscribe boxes (top & bottom) */
+/* 9. Subscribe sections */
 #subscribe-top,
 #subscribe-bottom {
   text-align: center;
   margin: 0 auto 2em;
 }
-
-.subscribe-box.side-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  flex-wrap: wrap;
-  max-width: 400px;
-  margin: 0 auto;
-  position: relative;
+#subscribe-top p,
+#subscribe-bottom p {
+  margin-bottom: 0.5em;
 }
 
+/* 10. Subscribe box */
+.subscribe-box.side-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  max-width: 400px;
+  margin: 0 auto;
+}
 .subscribe-box input {
   flex: 1;
   padding: 8px;
   font-size: 1rem;
 }
-
 .subscribe-box button {
   padding: 8px 16px;
   font-size: 1rem;
@@ -136,17 +123,15 @@ nav ul li a {
 
 /* 11. Status messages */
 .status {
+  display: none;
   font-size: 0.9rem;
   font-style: italic;
   margin-left: 0.5em;
-  display: none;
   white-space: nowrap;
 }
-
 .sending {
   color: #888;
 }
-
 .confirmation {
   color: green;
   font-weight: bold;
@@ -154,7 +139,6 @@ nav ul li a {
   opacity: 0;
   transform: scale(0.95);
 }
-
 @keyframes fadeScale {
   to {
     opacity: 1;
@@ -162,37 +146,28 @@ nav ul li a {
   }
 }
 
-/* 12. Safety section */
+/* 12. Safety section overrides */
 .safety-container {
   padding: 1em 0;
   line-height: 1.6;
 }
-
 .safety-container h2,
 .safety-container h3 {
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin: 2em 0 0.5em;
 }
-
 .safety-container p {
   margin-bottom: 1em;
 }
-
 .safety-container ul {
   margin: 0.5em 0 1em 1.5em;
 }
 
-/* 13. Back-to-top arrow */
+/* 13. Back‐to‐top arrow */
 .back-to-top {
-  display: inline-block;
+  float: right;
   font-size: 1.25rem;
   text-decoration: none;
-  margin-top: 1em;
-}
-
-#subscribe-top .back-to-top,
-#subscribe-bottom .back-to-top {
-  display: none;
+  margin-top: -0.5em;
 }
 
 /* 14. General link sizing */
@@ -200,38 +175,26 @@ a {
   font-size: 1.1rem;
 }
 
-/* 15. Mobile responsiveness */
-@media (max-width: 600px) {
-  .container {
-    max-width: 100%;
-    padding: 0 1em;
-  }
-
-  nav ul li a {
-    font-size: 1.3rem;
-    padding: 0.5em;
-  }
-
-  .back-to-top {
-    font-size: 1.5rem;
-    display: block;
-    text-align: right;
-    margin-top: 1em;
-  }
+/* 15. Hide arrows in subscribe sections */
+#subscribe-top .back-to-top,
+#subscribe-bottom .back-to-top {
+  display: none;
 }
+
+/* 16. Mobile styles */
 @media (max-width: 600px) {
-  /* Make all links larger on mobile */
+  /* Make all links larger */
   a {
     font-size: 1.4rem;
   }
 
-  /* Make navigation links larger */
+  /* Make nav links larger */
   nav ul li a {
     font-size: 1.5rem;
     padding: 0.5em;
   }
 
-  /* Make back-to-top arrows bigger and properly aligned */
+  /* Make back-to-top arrows bigger */
   .back-to-top {
     font-size: 2.2rem;
     display: block;
@@ -239,7 +202,7 @@ a {
     margin-top: 1em;
   }
 
-  /* Fix layout so content fills screen and is left-aligned */
+  /* Fix layout alignment */
   .container {
     max-width: 100%;
     padding: 0 1em;
@@ -252,4 +215,3 @@ a {
     text-align: left;
   }
 }
-
