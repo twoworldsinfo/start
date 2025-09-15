@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- 1. Enable responsive media queries on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Two Worlds Private Guide to Rio</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 2. Force-refresh CSS when you bump the version -->
+  <link rel="stylesheet" href="styles.css?v=2" />
+
   <style>
     /* ---- Local overrides ---- */
     /* Center the subscribe boxes under their prompt */
@@ -11,15 +17,18 @@
     #subscribe-bottom {
       text-align: center;
     }
+
     /* Yellow “Enter” buttons */
     .subscribe-box button {
       background-color: #f1c40f;
       color: #333;
     }
+
     /* Slightly larger general links */
     a {
       font-size: 1.1rem;
     }
+
     /* Back-to-top arrow styling */
     .back-to-top {
       float: right;
@@ -505,6 +514,7 @@
   </script>
 </body>
 </html>
+
 
 
 
