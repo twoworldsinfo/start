@@ -168,6 +168,7 @@ a {
 }
 
 /* 15. MOBILE OVERRIDES */
+/* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
   /* 1. Only enlarge nav links on mobile */
   nav ul li a {
@@ -198,17 +199,14 @@ a {
   /* 4. Page description now uses the full width */
   .page-description {
     max-width: 100% !important;
-
-    /* ———————————————— */
-/* Ensure the title link matches the H1 size */
-.page-title .title-link {
-  font-size: 2.5rem !important;
-  line-height: 1.2;        /* match your H1 line-height */
-  font-weight: inherit;    /* inherit the 700 weight */
-}
-
-
     margin: 0 !important;
   }
 }
 
+/* ———————————————— */
+/* Ensure the title link matches the H1 size */
+.page-title .title-link {
+  font-size: 2.5rem !important;
+  line-height: 1.2;
+  font-weight: inherit;
+}
