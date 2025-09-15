@@ -1,0 +1,105 @@
+/* 1. Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* 2. Base reset + typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fdfdfd;
+}
+
+/* 3. Section spacing */
+section {
+  margin-bottom: 2em;
+}
+
+/* 4. Headings */
+h1, h2, h3 {
+  margin: 0 0 0.5em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #222;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+/* 5. Paragraphs */
+p {
+  margin: 0 0 1.25em;
+}
+
+/* 6. Lists */
+ul, ol {
+  margin: 0 0 1.25em 1.5em;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* 7. Page header (title + description) */
+.page-header {
+  text-align: center;
+  margin: 2em 0 3em;
+}
+
+.page-description {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* 8. Subscribe box */
+.subscribe-box {
+  margin-top: 1em;
+  max-width: 300px;
+}
+
+.subscribe-box.side-button {
+  display: flex;
+}
+
+.subscribe-box.side-button input {
+  flex: 1;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.subscribe-box.side-button button {
+  margin-left: 0.5em;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.confirmation {
+  display: none;
+  color: green;
+  margin-top: 0.5em;
+}
