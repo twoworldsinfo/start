@@ -169,31 +169,35 @@ a {
 
 /* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
-  /* Force the viewport to re-evaluate */
-  a {
-    font-size: 1.4rem !important;
-  }
+  /* 1. Only enlarge nav links on mobile */
   nav ul li a {
-    font-size: 1.6rem !important;
-    padding: 0.6em !important;
+    font-size: 1.6rem;
+    padding: 0.6em;
   }
+
+  /* 2. Back-to-top arrows bigger */
   .back-to-top {
-    font-size: 2.4rem !important;
-    display: block !important;
-    text-align: right !important;
-    margin-top: 1em !important;
+    font-size: 2.4rem;
+    display: block;
+    text-align: right;
+    margin-top: 1em;
   }
+
+  /* 3. Full-width container & left-align everything */
   .container {
-    max-width: 100% !important;
-    padding: 0 1em !important;
-    text-align: left !important;
+    max-width: 100%;
+    padding: 0 1em;
+    text-align: left;
   }
   .page-header,
   #subscribe-top,
   #subscribe-bottom {
-    text-align: left !important;
+    text-align: left;
   }
+
+  /* 4. Page description now uses the full width */
   .page-description {
+    max-width: 100% !important;
     margin: 0 !important;
   }
 }
