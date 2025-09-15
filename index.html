@@ -58,12 +58,14 @@
 <section id="subscribe-top">
   <h2>Subscribe</h2>
   <p>Enter your Email here for the latest additions and current events</p>
-  <div class="subscribe-box side-button">
-    <input type="email" id="emailInputTop" placeholder="you@example.com" required />
-    <button id="subscribeButtonTop">Enter</button>
-    <span id="sendingTop" class="status sending">Sending…</span>
-    <span id="confirmationTop" class="status confirmation">Confirmed!</span>
-  </div>
+ <div class="subscribe-box side-button">
+  <input type="email" id="emailInputTop" placeholder="you@example.com" required />
+  <button id="subscribeButtonTop">Enter</button>
+  <span id="sendingTop" class="status sending">Sending…</span>
+  <span id="confirmationTop" class="status confirmation">Confirmed!</span>
+</div>
+
+
 </section>
 
 
@@ -245,11 +247,13 @@
   <h2>Stay Updated</h2>
   <p>Get notified about new content and local events</p>
   <div class="subscribe-box side-button">
-    <input type="email" id="emailInputBottom" placeholder="you@example.com" required />
-    <button id="subscribeButtonBottom">Enter</button>
-    <span id="sendingBottom" class="status sending">Sending…</span>
-    <span id="confirmationBottom" class="status confirmation">Confirmed!</span>
-  </div>
+  <input type="email" id="emailInputTop" placeholder="you@example.com" required />
+  <button id="subscribeButtonTop">Enter</button>
+  <span id="sendingTop" class="status sending">Sending…</span>
+  <span id="confirmationTop" class="status confirmation">Confirmed!</span>
+</div>
+
+
 </section>
 
 
@@ -275,7 +279,9 @@ function setupEmailField(inputId, buttonId, confirmId, sendingId) {
       return;
     }
 
-    sending.style.display = 'inline';
+    sending.style.display = 'inline-block';
+    sending.style.visibility = 'visible';
+    sending.style.display = 'none';
     confirmation.style.display = 'none';
 
     const formData = new URLSearchParams();
@@ -317,6 +323,7 @@ function setupEmailField(inputId, buttonId, confirmId, sendingId) {
 setupEmailField('emailInputBottom', 'subscribeButtonBottom', 'confirmationBottom', 'sendingBottom');
 </script>
 </html>
+
 
 
 
