@@ -231,55 +231,70 @@
 </html>
 
 <section id="subscribe">
- 
-  <input
-    type="email"
-    id="emailInput"
-    placeholder="you@example.com"
-    required
-    style="padding:8px; max-width:300px; width:100%;"
-  />
-  <p id="confirmation" style="display:none; color:green; margin-top:.5em;">
-    Confirmed!
-  </p>
+  Enter your Email here for the latest additions and current events
+  <div class="subscribe-box embedded-button">
+    <input
+      type="email"
+      id="emailInputEmbedded"
+      placeholder="you@example.com"
+      required
+    />
+    <button id="subscribeButtonEmbedded">Enter</button>
+  </div>
+  <p id="confirmationEmbedded" class="confirmation">Confirmed!</p>
 </section>
 
+<style>
+  .subscribe-box.embedded-button {
+    position: relative;
+    max-width: 300px;
+  }
+  .subscribe-box.embedded-button input {
+    width: 100%;
+    padding: 8px 4em 8px 8px; /* room for the button */
+  }
+  .subscribe-box.embedded-button button {
+    position: absolute;
+    right: 0.25em;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5em 1em;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  .confirmation {
+    display: none;
+    color: green;
+    margin-top: 0.5em;
+  }
+</style>
+
 <script>
-  const input = document.getElementById('emailInput');
-  const confirmation = document.getElementById('confirmation');
-  const endpoint = 'https://script.google.com/macros/s/AKfycbzK-BRQnRzB0J_XrkjR9H-hNx-wvQhNCmZENMIu4NtuWjtyQszTVkw1Iqei5O3CJlRHxA/exec';
+  const inputE = document.getElementById('emailInputEmbedded');
+  const buttonE = document.getElementById('subscribeButtonEmbedded');
+  const confirmE = document.getElementById('confirmationEmbedded');
 
-  input.addEventListener('keydown', async e => {
-    if (e.key !== 'Enter') return;
-    e.preventDefault();
-
-    if (!input.checkValidity()) {
-      input.reportValidity();
+  async function subscribeE() {
+    if (!inputE.checkValidity()) {
+      inputE.reportValidity();
       return;
     }
+    // TODO: send inputE.value to your backend or Google Apps Script URL
+    confirmE.style.display = 'block';
+    inputE.value = '';
+  }
 
-    // send to your Apps Script web app
-    const formData = new URLSearchParams();
-    formData.append('Email', input.value);
-
-    try {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        body: formData
-      });
-      const json = await res.json();
-      if (json.result === 'success') {
-        confirmation.style.display = 'block';
-        input.value = '';
-      } else {
-        throw new Error(json.error);
-      }
-    } catch(err) {
-      alert('Oops, something went wrong.');
-      console.error(err);
+  buttonE.addEventListener('click', subscribeE);
+  inputE.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      subscribeE();
     }
   });
 </script>
+
 
 
 
