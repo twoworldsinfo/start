@@ -144,8 +144,9 @@ li {
 
 /* 9. Safety section */
 /* Removed max-width and margin: now inherits centering from .container */
+/* After */
 .safety-container {
-  padding: 0 1em;
+  padding: 1em 0;    /* only top/bottom padding */
   line-height: 1.6;
 }
 
@@ -162,3 +163,4 @@ li {
 .safety-container ul {
   margin: 0.5em 0 1em 1.5em;
 }
+
