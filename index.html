@@ -256,53 +256,68 @@
 <script>
   const endpoint = 'https://script.google.com/macros/s/AKfycbzK-BRQnRzB0J_XrkjR9H-hNx-wvQhNCmZENMIu4NtuWjtyQszTVkw1Iqei5O3CJlRHxA/exec'; // Replace with your actual URL
 
-  function setupEmailField(inputId, buttonId, confirmId) {
-    const input = document.getElementById(inputId);
-    const button = document.getElementById(buttonId);
-    const confirmation = document.getElementById(confirmId);
+function setupEmailField(inputId, buttonId, confirmId, sendingId) {
+  const input = document.getElementById(inputId);
+  const button = document.getElementById(buttonId);
+  const confirmation = document.getElementById(confirmId);
+  const sending = document.getElementById(sendingId);
 
-    async function subscribe() {
-      if (!input.checkValidity()) {
-        input.reportValidity();
-        return;
-      }
-
-      const formData = new URLSearchParams();
-      formData.append('Email', input.value);
-
-      try {
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          body: formData
-        });
-
-        const result = await res.json();
-        if (result.result === 'success') {
-          confirmation.style.display = 'block';
-          input.value = '';
-        } else {
-          throw new Error(result.error || 'Unknown error');
-        }
-      } catch (err) {
-        alert('Something went wrong. Please try again later.');
-        console.error(err);
-      }
-    }
-
-    button.addEventListener('click', subscribe);
-    input.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        subscribe();
-      }
-    });
+  function showConfirmation(el) {
+    el.style.display = 'inline';
+    el.style.animation = 'none';
+    void el.offsetWidth;
+    el.style.animation = 'fadeScale 0.6s ease forwards';
   }
 
+  async function subscribe() {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return;
+    }
+
+    sending.style.display = 'inline';
+    confirmation.style.display = 'none';
+
+    const formData = new URLSearchParams();
+    formData.append('Email', input.value);
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await res.json();
+      sending.style.display = 'none';
+
+      if (result.result === 'success') {
+        showConfirmation(confirmation);
+        input.value = '';
+      } else {
+        throw new Error(result.error || 'Unknown error');
+      }
+    } catch (err) {
+      sending.style.display = 'none';
+      alert('Something went wrong. Please try again later.');
+      console.error(err);
+    }
+  }
+
+  button.addEventListener('click', subscribe);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      subscribe();
+    }
+  });
+}
+
   // Initialize both fields
-  setupEmailField('emailInputTop', 'subscribeButtonTop', 'confirmationTop');
-  setupEmailField('emailInputBottom', 'subscribeButtonBottom', 'confirmationBottom');
+ setupEmailField('emailInputTop', 'subscribeButtonTop', 'confirmationTop', 'sendingTop');
+setupEmailField('emailInputBottom', 'subscribeButtonBottom', 'confirmationBottom', 'sendingBottom');
 </script>
 </html>
+
 
 
 
