@@ -169,6 +169,32 @@ a {
 
 /* 15. MOBILE OVERRIDES */
 /* 15. MOBILE OVERRIDES */
+
+.page-header {
+  position: relative;
+  text-align: center;
+  margin: 2em 0 3em;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.lang-switcher a {
+  color: #555;          /* or whatever link color you prefer */
+  text-decoration: none;
+  margin: 0 0.25em;
+}
+
+.lang-switcher a:hover {
+  text-decoration: underline;
+}
+
+
 @media (max-width: 600px) {
   /* 1. Only enlarge nav links on mobile */
   nav ul li a {
@@ -210,3 +236,4 @@ a {
   line-height: 1.2 !important;
   font-weight: inherit !important;
 }
+
