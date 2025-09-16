@@ -675,10 +675,10 @@
 
 <script>
 (function() {
-  const sortSelect = document.getElementById('restaurant-sort');
+  const sortSelect      = document.getElementById('restaurant-sort');
   const priceCheckboxes = document.querySelectorAll('.price-options input');
-  const favoritesToggle = document.getElementById('show-favorites-only');
-  const list = document.getElementById('restaurant-list');
+  const favToggle       = document.getElementById('show-favorites-only');
+  const list            = document.getElementById('restaurant-list');
 
   function getSelectedPrices() {
     return Array.from(priceCheckboxes)
@@ -687,42 +687,63 @@
   }
 
   function updateList(isInitial = false) {
-    const sortKey = sortSelect.value;
-    const allowedPrices = getSelectedPrices();
-    const showOnlyFavorites = favoritesToggle.checked;
+    const sortKey         = sortSelect.value;
+    const allowedPrices   = getSelectedPrices();
+    const showOnlyFavs    = favToggle.checked;
 
+    // Gather all <li> items
     const items = Array.from(list.children);
 
-    const visibleItems = items.filter(li => {
-      const price = li.dataset.price;
-      const isFavorite = li.dataset.favorite === 'true';
-      const priceMatch = allowedPrices.includes(price);
-      return priceMatch && (!showOnlyFavorites || isFavorite);
+    // Filter by price and (if toggled) by favorites
+    const visible = items.filter(li => {
+      const price   = li.dataset.price;
+      const isFav   = li.dataset.favorite === 'true';
+      const priceOK = allowedPrices.includes(price);
+      return priceOK && (!showOnlyFavs || isFav);
     });
 
-    visibleItems.sort((a, b) => {
-      const va = a.dataset[sortKey]?.toLowerCase() || '';
-      const vb = b.dataset[sortKey]?.toLowerCase() || '';
-      const cmp = va.localeCompare(vb);
-      if (cmp !== 0) return cmp;
+    // Sort them
+    visible.sort((a, b) => {
+      // 1) On initial load: bubble favorites to top
+      if (isInitial) {
+        const favA = a.dataset.favorite === 'true' ? 1 : 0;
+        const favB = b.dataset.favorite === 'true' ? 1 : 0;
+        if (favB !== favA) {
+          return favB - favA;
+        }
+      }
 
-      // Tie-breaker: favorites first
+      // 2) Primary sort by location or cuisine
+      const va = (a.dataset[sortKey] || '').toLowerCase();
+      const vb = (b.dataset[sortKey] || '').toLowerCase();
+      const cmp = va.localeCompare(vb);
+      if (cmp !== 0) {
+        return cmp;
+      }
+
+      // 3) Tie-breaker: favorites at top
       const favA = a.dataset.favorite === 'true' ? 1 : 0;
       const favB = b.dataset.favorite === 'true' ? 1 : 0;
       return favB - favA;
     });
 
+    // Re-render
     list.innerHTML = '';
-    visibleItems.forEach(li => list.appendChild(li));
+    visible.forEach(li => list.appendChild(li));
   }
 
+  // Wire up controls
   sortSelect.addEventListener('change', () => updateList(false));
-  priceCheckboxes.forEach(cb => cb.addEventListener('change', () => updateList(false)));
-  favoritesToggle.addEventListener('change', () => updateList(false));
+  priceCheckboxes.forEach(cb =>
+    cb.addEventListener('change', () => updateList(false))
+  );
+  favToggle.addEventListener('change', () => updateList(false));
 
-  updateList(true); // Initial load
+  // Initial render: favorites first
+  updateList(true);
 })();
 </script>
+
 
 
 
