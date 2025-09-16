@@ -234,6 +234,37 @@ a {
 .page-title .title-link {
   font-size: 2.5rem !important;
   line-height: 1.2 !important;
+
+  /* ——————————————————————————————
+   Language-switcher: fix overlap & mobile sizing
+—————————————————————————————— */
+.page-header {
+  /* make room for the switcher */
+  position: relative;
+  padding-top: 1.5em;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Mobile: extra header padding & smaller switcher */
+@media (max-width: 600px) {
+  .page-header {
+    padding-top: 2.5em;
+  }
+  .lang-switcher {
+    top: 1em;
+    right: 0.75em;
+    font-size: 0.8rem;
+  }
+}
   font-weight: inherit !important;
 }
+
 
