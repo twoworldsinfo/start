@@ -257,3 +257,25 @@ a {
 #google_translate_element select.goog-te-combo {
   display: none !important;
 }
+
+/* ──────────────────────────────
+   Hide Google Translate UI
+──────────────────────────────── */
+  
+/* 1) Remove the top “Translate this page” banner/frame */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* 2) Reset any body shift from the banner */
+body {
+  top: 0 !important;
+}
+
+/* 3) Hide the injected dropdown & logo entirely */
+#google_translate_element .goog-te-gadget-icon,
+#google_translate_element .goog-te-gadget-simple,
+#google_translate_element select.goog-te-combo {
+  display: none !important;
+}
