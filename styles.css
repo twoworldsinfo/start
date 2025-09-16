@@ -267,4 +267,33 @@ a {
   font-weight: inherit !important;
 }
 
+/* ——————————————————————————————
+   Language-switcher: header padding fix
+—————————————————————————————— */
+.page-header {
+  position: relative;    /* keep the switcher positioned inside here */
+  padding-top: 1.5em;    /* room above H1 for the switcher on desktop */
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* bump padding & shrink links on mobile */
+@media (max-width: 600px) {
+  .page-header {
+    padding-top: 2.5em;
+  }
+  .lang-switcher {
+    top: 1em;
+    right: 0.75em;
+    font-size: 0.8rem;
+  }
+}
+
 
