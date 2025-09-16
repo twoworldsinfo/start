@@ -290,3 +290,40 @@ a {
   color: #777;
   margin-top: 0.25em;
 }
+.restaurant-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+  margin: 1em 0;
+  font-size: 1rem;
+}
+
+.restaurant-controls select {
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+}
+
+.price-options label {
+  margin-right: 0.5em;
+  font-size: 0.95rem;
+}
+
+.favorites-toggle {
+  font-size: 0.95rem;
+}
+.favorites-toggle input {
+  margin-right: 0.25em;
+}
+
+.favorite-star {
+  color: gold;
+  font-size: 1.2rem;
+  margin-left: 0.25em;
+}
+
+.restaurant-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.25em;
+}
