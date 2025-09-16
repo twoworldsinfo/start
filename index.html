@@ -323,6 +323,10 @@
         Sheraton Hotel  
       </a> (Extensive breakfast buffet, just a few minutes walk from the penthouse. Reasonably good quality. Open from7–11 am)
       <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
+      data-favorite="true" ...>
+  <a href="...">Restaurant Name</a>
+  <span class="favorite-star">⭐</span>
+
     </li>
     <li data-location="Vidigal" data-price="$$" data-type="Breakfast">
       <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
@@ -591,49 +595,60 @@
 <script>
 (function() {
   const sortSelect = document.getElementById('restaurant-sort');
+  const priceCheckboxes = document.querySelectorAll('.price-filter input');
   const list = document.getElementById('restaurant-list');
 
-  function sortList() {
-    const key = sortSelect.value;
-    const items = Array.from(list.children);
-
-    items.sort((a, b) => {
-      let va = a.dataset[key] || '';
-      let vb = b.dataset[key] || '';
-
-      // Normalize for comparison
-      va = va.toLowerCase();
-      vb = vb.toLowerCase();
-
-      if (key === 'price') {
-        // Sort by number of dollar signs
-        return va.length - vb.length;
-      }
-
-      // Alphabetical sort for location and type
-      return va.localeCompare(vb);
-    });
-
-    // Re-append in sorted order
-    items.forEach(item => list.appendChild(item));
+  function getSelectedPrices() {
+    return Array.from(priceCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
   }
 
-  sortSelect.addEventListener('change', sortList);
+  function updateList(isInitial = false) {
+    const sortKey = sortSelect.value;
+    const allowedPrices = getSelectedPrices();
+
+    const items = Array.from(list.children);
+
+    // Filter by price
+    const visibleItems = items.filter(li =>
+      allowedPrices.includes(li.dataset.price)
+    );
+
+    // Sort logic
+    visibleItems.sort((a, b) => {
+      if (isInitial) {
+        // On initial load, favorites go first
+        const favA = a.dataset.favorite === 'true' ? 1 : 0;
+        const favB = b.dataset.favorite === 'true' ? 1 : 0;
+        return favB - favA;
+      }
+
+      // Sort by selected key
+      const va = a.dataset[sortKey]?.toLowerCase() || '';
+      const vb = b.dataset[sortKey]?.toLowerCase() || '';
+      const cmp = va.localeCompare(vb);
+
+      if (cmp !== 0) return cmp;
+
+      // If equal, prioritize favorites
+      const favA = a.dataset.favorite === 'true' ? 1 : 0;
+      const favB = b.dataset.favorite === 'true' ? 1 : 0;
+      return favB - favA;
+    });
+
+    // Clear and re-append
+    list.innerHTML = '';
+    visibleItems.forEach(li => list.appendChild(li));
+  }
+
+  sortSelect.addEventListener('change', () => updateList(false));
+  priceCheckboxes.forEach(cb => cb.addEventListener('change', () => updateList(false)));
+
+  // Initial load: favorites first
+  updateList(true);
 })();
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
