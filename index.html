@@ -306,14 +306,24 @@
 <section id="restaurants">
   <h2>Restaurants</h2>
 
-  <div class="sort-controls">
-    <label for="restaurant-sort">Sort by:</label>
-    <select id="restaurant-sort">
-      <option value="location">Location</option>
-      <option value="price">Price</option>
-      <option value="type">Cuisine</option>
-    </select>
-  </div>
+<div class="restaurant-controls">
+  <label for="restaurant-sort">Sort by:</label>
+  <select id="restaurant-sort">
+    <option value="location">Location</option>
+    <option value="type">Cuisine</option>
+  </select>
+
+  <fieldset class="price-filter">
+    <legend>Filter by price:</legend>
+    <label><input type="checkbox" value="$" checked> $</label>
+    <label><input type="checkbox" value="$$" checked> $$</label>
+    <label><input type="checkbox" value="$$$" checked> $$$</label>
+  </fieldset>
+
+  <label class="favorites-toggle">
+    <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
+  </label>
+</div>
 
   <ul id="restaurant-list">
 
@@ -649,6 +659,7 @@
   updateList(true);
 })();
 </script>
+
 
 
 
