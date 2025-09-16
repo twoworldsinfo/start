@@ -554,7 +554,7 @@
   // 3) Load the Google API + call our hook when it's ready
   (function() {
     const gtScript = document.createElement('script');
-    gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.body.appendChild(gtScript);
     // Poll until the <select> appears, then hook our links
     const interval = setInterval(() => {
@@ -567,6 +567,7 @@
 </script>
 </body>
 </html>
+
 
 
 
