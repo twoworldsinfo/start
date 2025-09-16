@@ -168,33 +168,6 @@ a {
 }
 
 /* 15. MOBILE OVERRIDES */
-/* 15. MOBILE OVERRIDES */
-
-.page-header {
-  position: relative;
-  text-align: center;
-  margin: 2em 0 3em;
-}
-
-.lang-switcher {
-  position: absolute;
-  top: 0.5em;
-  right: 1em;
-  font-size: 0.9rem;
-  line-height: 1;
-}
-
-.lang-switcher a {
-  color: #555;          /* or whatever link color you prefer */
-  text-decoration: none;
-  margin: 0 0.25em;
-}
-
-.lang-switcher a:hover {
-  text-decoration: underline;
-}
-
-
 @media (max-width: 600px) {
   /* 1. Only enlarge nav links on mobile */
   nav ul li a {
@@ -229,50 +202,19 @@ a {
   }
 }
 
-/* ———————————————————————————————————————— */
-/* Ensure the title link matches the H1 size */
+/* 16. Ensure the title link matches the H1 size */
 .page-title .title-link {
   font-size: 2.5rem !important;
   line-height: 1.2 !important;
-
-  /* ——————————————————————————————
-   Language-switcher: fix overlap & mobile sizing
-—————————————————————————————— */
-.page-header {
-  /* make room for the switcher */
-  position: relative;
-  padding-top: 1.5em;
-}
-
-.lang-switcher {
-  position: absolute;
-  top: 0.5em;
-  right: 1em;
-  font-size: 0.9rem;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* Mobile: extra header padding & smaller switcher */
-@media (max-width: 600px) {
-  .page-header {
-    padding-top: 2.5em;
-  }
-  .lang-switcher {
-    top: 1em;
-    right: 0.75em;
-    font-size: 0.8rem;
-  }
-}
   font-weight: inherit !important;
 }
 
-/* ——————————————————————————————
-   Language-switcher: header padding fix
-—————————————————————————————— */
+/* ──────────────────────────────────────────
+   17. Language-switcher placement & overlap fix
+────────────────────────────────────────── */
 .page-header {
-  position: relative;    /* keep the switcher positioned inside here */
-  padding-top: 1.5em;    /* room above H1 for the switcher on desktop */
+  position: relative;
+  padding-top: 2.5em;   /* room above the H1 on desktop */
 }
 
 .lang-switcher {
@@ -284,10 +226,18 @@ a {
   white-space: nowrap;
 }
 
-/* bump padding & shrink links on mobile */
+.lang-switcher a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 0.25em;
+}
+.lang-switcher a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
   .page-header {
-    padding-top: 2.5em;
+    padding-top: 3.5em;  /* extra room on small screens */
   }
   .lang-switcher {
     top: 1em;
@@ -295,5 +245,3 @@ a {
     font-size: 0.8rem;
   }
 }
-
-
