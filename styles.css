@@ -249,3 +249,8 @@ a {
   padding: 0.5em;
   border-bottom: 1px solid #eee;
 }
+.restaurant-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.25em;
+}
