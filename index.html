@@ -306,76 +306,91 @@
 <section id="restaurants">
   <h2>Restaurants</h2>
 
-<div class="restaurant-controls">
-  <label for="restaurant-sort">Sort by:</label>
-  <select id="restaurant-sort">
-    <option value="location">Location</option>
-    <option value="type">Cuisine</option>
-  </select>
+  <div class="restaurant-controls">
+    <label for="restaurant-sort">Sort by:</label>
+    <select id="restaurant-sort">
+      <option value="location">Location</option>
+      <option value="type">Cuisine</option>
+    </select>
 
-  <span class="price-options">
-    <label><input type="checkbox" value="$" checked> $</label>
-    <label><input type="checkbox" value="$$" checked> $$</label>
-    <label><input type="checkbox" value="$$$" checked> $$$</label>
-  </span>
+    <span class="price-options">
+      <label><input type="checkbox" value="$" checked> $</label>
+      <label><input type="checkbox" value="$$" checked> $$</label>
+      <label><input type="checkbox" value="$$$" checked> $$$</label>
+    </span>
 
-  <label class="favorites-toggle">
-    <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
-  </label>
-</div>
+    <label class="favorites-toggle">
+      <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
+    </label>
+  </div>
 
   <ul id="restaurant-list">
 
     <!-- Breakfast Spots -->
-   <li data-location="Leblon" data-price="$$" data-type="Breakfast" data-favorite="true">
-  <a href="https://www.google.com/maps/search/Sheraton+Grand+Rio+Hotel+%26+Resort+breakfast+buffet+Rio+de+Janeiro" target="_blank" rel="noopener">
-    Sheraton Hotel
-  </a> (Extensive breakfast buffet, just a few minutes walk from the penthouse. Reasonably good quality. Open from 7–11 am)
-  <span class="favorite-star">⭐</span>
-  <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-</li>
+    <li data-location="Leblon" data-price="$$" data-type="Breakfast" data-favorite="true">
+      <a href="https://www.google.com/maps/search/Sheraton+Grand+Rio+Hotel+%26+Resort+breakfast+buffet+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Sheraton Hotel
+      </a>
+      (Extensive breakfast buffet, minutes from the penthouse. Open 7–11 am)
+      <span class="favorite-star">⭐</span>
+      <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
+    </li>
+
     <li data-location="Vidigal" data-price="$$" data-type="Breakfast">
       <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
         Café e Mar
-      </a> (amazing views, up the favela hill, take a motortaxi or van to go there; reservation required but easyly done via their link on Google)
+      </a>
+      (amazing views; reservation required)
       <div class="restaurant-meta">Vidigal · $$ · Breakfast</div>
     </li>
-    <li data-location="Leblon" data-price="$$" data-type="Breakfast">
+
+    <li data-location="Ipanema" data-price="$$" data-type="Bakery">
       <a href="https://www.google.com/maps/search/La+Bicyclette+Rio+de+Janeiro" target="_blank" rel="noopener">
         La Bicyclette
-      </a> (French bakery with the best baguettes and pastries. Some things are also sold the next day, so always best to ask if it was baked the same day. Nonetheless, one of my favorites! They also deliver!)
+      </a>
+      (French bakery; delivers)
       <div class="restaurant-meta">Ipanema · $$ · Bakery</div>
     </li>
+
     <li data-location="Ipanema" data-price="$" data-type="Bakery">
       <a href="https://www.google.com/maps/search/Nema+Padaria+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
         Nema
-      </a> (bread chain with pre-baked pizzas)
+      </a>
+      (bread chain; pre-baked pizzas)
       <div class="restaurant-meta">Ipanema · $ · Bakery</div>
     </li>
+
     <li data-location="Leblon" data-price="$$" data-type="Sandwich">
       <a href="https://www.google.com/maps/search/Talho+Capixaba+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
         Talho Capixaba
-      </a> (Leblon sandwich shop; pricey)
+      </a>
+      (Leblon sandwich shop; pricey)
       <div class="restaurant-meta">Leblon · $$ · Sandwich</div>
     </li>
+
     <li data-location="Leblon" data-price="$" data-type="Bakery">
       <a href="https://www.google.com/maps/search/Confeitaria+Rio+Lisboa+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
         Confeitaria Rio Lisboa
-      </a> (next door to Talho; great and affordable)
+      </a>
+      (next door to Talho; great and affordable)
       <div class="restaurant-meta">Leblon · $ · Bakery</div>
     </li>
+
     <li data-location="Ipanema" data-price="$" data-type="Juice bar">
       <a href="https://www.google.com/maps/search/Bibi+Sucos+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
         Bibi Sucos
       </a>
       <div class="restaurant-meta">Ipanema · $ · Juice bar</div>
     </li>
+
     <li data-location="Ipanema" data-price="$" data-type="Juice bar">
       <a href="https://www.google.com/maps/search/Natural+e+Sabor+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
         Natural e Sabor
-      </a> (grab “um salgado” and head to the beach)
+      </a>
+      (grab “um salgado” and head to the beach)
       <div class="restaurant-meta">Ipanema · $ · Juice bar</div>
     </li>
+
 
     <!-- Ice Cream & Açaí -->
     <li data-location="Leblon" data-price="$$" data-type="Ice Cream">
@@ -384,30 +399,36 @@
       </a>
       <div class="restaurant-meta">Leblon · $$ · Ice Cream</div>
     </li>
+
     <li data-location="Leblon" data-price="$$" data-type="Ice Cream">
-      <a href="https://www.google.com/maps/search/Milk+Creamery+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
+      <a href="https://www.google.com/maps/search/Milk+Creamery+Leblon+Rio+de++Janeiro" target="_blank" rel="noopener">
         Milk Creamery
       </a>
       <div class="restaurant-meta">Leblon · $$ · Ice Cream</div>
     </li>
+
     <li data-location="Ipanema" data-price="$$" data-type="Ice Cream">
       <a href="https://www.google.com/maps/search/Momo+Gelato+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
         Momo Gelato
       </a>
       <div class="restaurant-meta">Ipanema · $$ · Ice Cream</div>
     </li>
+
     <li data-location="Copacabana" data-price="$$" data-type="Ice Cream">
       <a href="https://www.google.com/maps/search/Gelateria+Piemonte+Rio+de+Janeiro" target="_blank" rel="noopener">
         Gelateria Piemonte
       </a>
       <div class="restaurant-meta">Copacabana · $$ · Ice Cream</div>
     </li>
+
     <li data-location="Ipanema" data-price="$" data-type="Açaí">
       <a href="https://www.google.com/maps/search/Oakberry+Acai+Rio+de+Janeiro" target="_blank" rel="noopener">
         Oakberry
-      </a> (Açaí bowls)
+      </a>
+      (Açaí bowls)
       <div class="restaurant-meta">Ipanema · $ · Açaí</div>
     </li>
+
 
     <!-- Dining Out -->
     <li data-location="Ipanema" data-price="$" data-type="Burger">
@@ -416,37 +437,91 @@
       </a>
       <div class="restaurant-meta">Ipanema · $ · Burger</div>
     </li>
+
     <li data-location="Lagoa" data-price="$$$" data-type="Churrascaria">
       <a href="https://www.google.com/maps/search/Rio+Brasa+Lagoa+Rio+de+Janeiro" target="_blank" rel="noopener">
         Rio Brasa Lagoa
       </a>
       <div class="restaurant-meta">Lagoa · $$$ · Churrascaria</div>
     </li>
+
     <li data-location="Leblon" data-price="$$$" data-type="Churrascaria">
       <a href="https://www.google.com/maps/search/Assador+Rio+de+Janeiro" target="_blank" rel="noopener">
         Assador
       </a>
       <div class="restaurant-meta">Leblon · $$$ · Churrascaria</div>
     </li>
+
     <li data-location="Ipanema" data-price="$$" data-type="Vegan">
       <a href="https://www.google.com/maps/search/Teva+Vegetal+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
         Teva
-      </a> (sophisticated vegan)
+      </a>
+      (sophisticated vegan)
       <div class="restaurant-meta">Ipanema · $$ · Vegan</div>
     </li>
+
     <li data-location="Leblon" data-price="$" data-type="Quilo">
       <a href="https://www.google.com/maps/search/Bella+Blu+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
         Bella Blu
-      </a> (restaurante de quilo)
+      </a>
+      (restaurante de quilo)
       <div class="restaurant-meta">Leblon · $ · Quilo</div>
     </li>
+
     <li data-location="Botafogo" data-price="$$" data-type="Mexican">
       <a href="https://www.google.com/maps/search/Guadalupe+Botafogo+Rio+de+Janeiro" target="_blank" rel="noopener">
         Guadalupe
-      </a> (authentic Mexican in Botafogo)
+      </a>
+      (authentic Mexican in Botafogo)
       <div class="restaurant-meta">Botafogo · $$ · Mexican</div>
-    </
-     </ul>
+    </li>
+
+    <li data-location="Rio de Janeiro" data-price="$" data-type="Pizza">
+      <a href="https://www.google.com/maps/search/Parma+Pizzaria+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Parma
+      </a>
+      (all-you-can-eat pizza)
+      <div class="restaurant-meta">Rio de Janeiro · $ · Pizza</div>
+    </li>
+
+    <li data-location="Leblon" data-price="$$" data-type="Buffet">
+      <a href="https://www.google.com/maps/search/Rascal+Shopping+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Rascal
+      </a>
+      (Italian buffet in Shopping Leblon)
+      <div class="restaurant-meta">Leblon · $$ · Buffet</div>
+    </li>
+
+    <li data-location="Leblon" data-price="$$" data-type="Bistro">
+      <a href="https://www.google.com/maps/search/Livraria+Da+Travessa+Shopping+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Livraria da Travessa Bistro
+      </a>
+      <div class="restaurant-meta">Leblon · $$ · Bistro</div>
+    </li>
+
+    <li data-location="Copacabana" data-price="$$$" data-type="Sushi">
+      <a href="https://www.google.com/maps/place/Haru+Sushi+Bar+Copacabana+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Haru Sushi Bar
+      </a>
+      <div class="restaurant-meta">Copacabana · $$$ · Sushi</div>
+    </li>
+
+    <li data-location="Leblon" data-price="$$$" data-type="Sushi">
+      <a href="https://www.google.com/maps/search/San+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
+        San Leblon
+      </a>
+      <div class="restaurant-meta">Leblon · $$$ · Sushi</div>
+    </li>
+
+    <li data-location="Leblon" data-price="$$$" data-type="Sushi">
+      <a href="https://www.google.com/maps/search/Pabu+Izakaya+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Pabu Izakaya
+      </a>
+      <div class="restaurant-meta">Leblon · $$$ · Sushi</div>
+    </li>
+
+  </ul>
+</section>
 
     <!-- Beaches -->
     <section id="beaches">
@@ -648,6 +723,7 @@
   updateList(true); // Initial load
 })();
 </script>
+
 
 
 
