@@ -55,6 +55,8 @@ li {
 .page-header {
   text-align: center;
   margin: 2em 0 3em;
+  position: relative;        /* for the switcher */
+  padding-top: 2.5em;        /* room above the H1 */
 }
 .page-description {
   max-width: 600px;
@@ -169,21 +171,16 @@ a {
 
 /* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
-  /* 1. Only enlarge nav links on mobile */
   nav ul li a {
     font-size: 1.6rem;
     padding: 0.6em;
   }
-
-  /* 2. Back-to-top arrows bigger */
   .back-to-top {
     font-size: 2.4rem;
     display: block;
     text-align: right;
     margin-top: 1em;
   }
-
-  /* 3. Full-width container & left-align everything */
   .container {
     max-width: 100%;
     padding: 0 1em;
@@ -194,8 +191,6 @@ a {
   #subscribe-bottom {
     text-align: left;
   }
-
-  /* 4. Page description now uses the full width */
   .page-description {
     max-width: 100% !important;
     margin: 0 !important;
@@ -209,14 +204,7 @@ a {
   font-weight: inherit !important;
 }
 
-/* ──────────────────────────────────────────
-   17. Language-switcher placement & overlap fix
-────────────────────────────────────────── */
-.page-header {
-  position: relative;
-  padding-top: 2.5em;   /* room above the H1 on desktop */
-}
-
+/* 17. Language-switcher placement & overlap fix */
 .lang-switcher {
   position: absolute;
   top: 0.5em;
@@ -225,7 +213,6 @@ a {
   line-height: 1;
   white-space: nowrap;
 }
-
 .lang-switcher a {
   color: #555;
   text-decoration: none;
@@ -234,48 +221,10 @@ a {
 .lang-switcher a:hover {
   text-decoration: underline;
 }
-
 @media (max-width: 600px) {
-  .page-header {
-    padding-top: 3.5em;  /* extra room on small screens */
-  }
   .lang-switcher {
     top: 1em;
     right: 0.75em;
     font-size: 0.8rem;
   }
-}
-
-/* hide Google logo/link, but keep the <select> in the DOM */
-#google_translate_element .goog-logo-link,
-#google_translate_element .goog-te-gadget-icon {
-  display: none !important;
-}
-/* ──────────────────────────────────────────
-   Hide the native Google dropdown selector
-────────────────────────────────────────── */
-#google_translate_element select.goog-te-combo {
-  display: none !important;
-}
-
-/* ──────────────────────────────
-   Hide Google Translate UI
-──────────────────────────────── */
-  
-/* 1) Remove the top “Translate this page” banner/frame */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-/* 2) Reset any body shift from the banner */
-body {
-  top: 0 !important;
-}
-
-/* 3) Hide the injected dropdown & logo entirely */
-#google_translate_element .goog-te-gadget-icon,
-#google_translate_element .goog-te-gadget-simple,
-#google_translate_element select.goog-te-combo {
-  display: none !important;
 }
