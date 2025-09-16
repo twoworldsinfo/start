@@ -606,6 +606,7 @@
 (function() {
   const sortSelect = document.getElementById('restaurant-sort');
   const priceCheckboxes = document.querySelectorAll('.price-filter input');
+  const favoritesToggle = document.getElementById('show-favorites-only');
   const list = document.getElementById('restaurant-list');
 
   function getSelectedPrices() {
@@ -617,31 +618,25 @@
   function updateList(isInitial = false) {
     const sortKey = sortSelect.value;
     const allowedPrices = getSelectedPrices();
+    const showOnlyFavorites = favoritesToggle.checked;
 
     const items = Array.from(list.children);
 
-    // Filter by price
-    const visibleItems = items.filter(li =>
-      allowedPrices.includes(li.dataset.price)
-    );
+    // Filter by price and favorites
+    const visibleItems = items.filter(li => {
+      const isFavorite = li.dataset.favorite === 'true';
+      const priceMatch = allowedPrices.includes(li.dataset.price);
+      return priceMatch && (!showOnlyFavorites || isFavorite);
+    });
 
     // Sort logic
     visibleItems.sort((a, b) => {
-      if (isInitial) {
-        // On initial load, favorites go first
-        const favA = a.dataset.favorite === 'true' ? 1 : 0;
-        const favB = b.dataset.favorite === 'true' ? 1 : 0;
-        return favB - favA;
-      }
-
-      // Sort by selected key
       const va = a.dataset[sortKey]?.toLowerCase() || '';
       const vb = b.dataset[sortKey]?.toLowerCase() || '';
       const cmp = va.localeCompare(vb);
-
       if (cmp !== 0) return cmp;
 
-      // If equal, prioritize favorites
+      // Tie-breaker: favorites first
       const favA = a.dataset.favorite === 'true' ? 1 : 0;
       const favB = b.dataset.favorite === 'true' ? 1 : 0;
       return favB - favA;
@@ -654,6 +649,7 @@
 
   sortSelect.addEventListener('change', () => updateList(false));
   priceCheckboxes.forEach(cb => cb.addEventListener('change', () => updateList(false)));
+  favoritesToggle.addEventListener('change', () => updateList(false));
 
   // Initial load: favorites first
   updateList(true);
