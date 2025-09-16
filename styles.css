@@ -228,3 +228,24 @@ a {
     font-size: 0.8rem;
   }
 }
+.sort-controls {
+  margin: 1em 0;
+  text-align: center;
+}
+.sort-controls label {
+  margin-right: 0.5em;
+}
+#restaurant-sort {
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+}
+#restaurant-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#restaurant-list li {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border-bottom: 1px solid #eee;
+}
