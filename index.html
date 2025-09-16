@@ -313,12 +313,11 @@
     <option value="type">Cuisine</option>
   </select>
 
-  <fieldset class="price-filter">
-    <legend>Filter by price:</legend>
+  <span class="price-options">
     <label><input type="checkbox" value="$" checked> $</label>
     <label><input type="checkbox" value="$$" checked> $$</label>
     <label><input type="checkbox" value="$$$" checked> $$$</label>
-  </fieldset>
+  </span>
 
   <label class="favorites-toggle">
     <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
@@ -336,7 +335,6 @@
       data-favorite="true" ...>
   <a href="...">Restaurant Name</a>
   <span class="favorite-star">⭐</span>
-
     </li>
     <li data-location="Vidigal" data-price="$$" data-type="Breakfast">
       <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
@@ -605,7 +603,7 @@
 <script>
 (function() {
   const sortSelect = document.getElementById('restaurant-sort');
-  const priceCheckboxes = document.querySelectorAll('.price-filter input');
+  const priceCheckboxes = document.querySelectorAll('.price-options input');
   const favoritesToggle = document.getElementById('show-favorites-only');
   const list = document.getElementById('restaurant-list');
 
@@ -622,14 +620,13 @@
 
     const items = Array.from(list.children);
 
-    // Filter by price and favorites
     const visibleItems = items.filter(li => {
+      const price = li.dataset.price;
       const isFavorite = li.dataset.favorite === 'true';
-      const priceMatch = allowedPrices.includes(li.dataset.price);
+      const priceMatch = allowedPrices.includes(price);
       return priceMatch && (!showOnlyFavorites || isFavorite);
     });
 
-    // Sort logic
     visibleItems.sort((a, b) => {
       const va = a.dataset[sortKey]?.toLowerCase() || '';
       const vb = b.dataset[sortKey]?.toLowerCase() || '';
@@ -642,7 +639,6 @@
       return favB - favA;
     });
 
-    // Clear and re-append
     list.innerHTML = '';
     visibleItems.forEach(li => list.appendChild(li));
   }
@@ -651,10 +647,10 @@
   priceCheckboxes.forEach(cb => cb.addEventListener('change', () => updateList(false)));
   favoritesToggle.addEventListener('change', () => updateList(false));
 
-  // Initial load: favorites first
-  updateList(true);
+  updateList(true); // Initial load
 })();
 </script>
+
 
 
 
