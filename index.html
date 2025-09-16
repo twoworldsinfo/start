@@ -525,8 +525,50 @@
     setupEmailField('emailInputTop', 'subscribeButtonTop', 'confirmationTop', 'sendingTop');
     setupEmailField('emailInputBottom', 'subscribeButtonBottom', 'confirmationBottom', 'sendingBottom');
   </script>
+
+  <script>
+  // 1) Initialize the widget, telling it our page's default language is English,
+  //    and we only want PT, ES, FR, DE as options.
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'pt,es,fr,de',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  // 2) After the widget loads, wire up our links to change the <select> value.
+  function hookLangLinks() {
+    const select = document.querySelector('#google_translate_element select');
+    if (!select) return;
+    document.querySelectorAll('.lang-switcher [data-lang]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const lang = link.getAttribute('data-lang');
+        select.value = lang;
+        // Fire a change so Google Translate kicks in
+        select.dispatchEvent(new Event('change'));
+      });
+    });
+  }
+
+  // 3) Load the Google API + call our hook when it's ready
+  (function() {
+    const gtScript = document.createElement('script');
+    gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(gtScript);
+    // Poll until the <select> appears, then hook our links
+    const interval = setInterval(() => {
+      if (window.google && document.querySelector('#google_translate_element select')) {
+        clearInterval(interval);
+        hookLangLinks();
+      }
+    }, 300);
+  })();
+</script>
 </body>
 </html>
+
 
 
 
