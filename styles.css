@@ -245,3 +245,9 @@ a {
     font-size: 0.8rem;
   }
 }
+
+/* hide Google logo/link, but keep the <select> in the DOM */
+#google_translate_element .goog-logo-link,
+#google_translate_element .goog-te-gadget-icon {
+  display: none !important;
+}
