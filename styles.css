@@ -251,3 +251,9 @@ a {
 #google_translate_element .goog-te-gadget-icon {
   display: none !important;
 }
+/* ──────────────────────────────────────────
+   Hide the native Google dropdown selector
+────────────────────────────────────────── */
+#google_translate_element select.goog-te-combo {
+  display: none !important;
+}
