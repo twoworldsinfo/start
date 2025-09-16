@@ -482,6 +482,33 @@
   })();
 </script>
 
+<script>
+  (function() {
+    const select = document.getElementById('restaurant-sort');
+    const list    = document.getElementById('restaurant-list');
+
+    select.addEventListener('change', () => {
+      const key = select.value;
+      // build array of <li>
+      const items = Array.from(list.children);
+
+      items.sort((a, b) => {
+        let va = a.dataset[key].toLowerCase();
+        let vb = b.dataset[key].toLowerCase();
+
+        if (key === 'price') {
+          // sort by length of "$" string (shorter = cheaper)
+          return va.length - vb.length;
+        }
+        // alphabetical for location & type
+        return va.localeCompare(vb);
+      });
+
+      // re-append in new order
+      items.forEach(li => list.appendChild(li));
+    });
+  })();
+</script>
 
 
 
