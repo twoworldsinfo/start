@@ -589,31 +589,37 @@
 </script>
 
 <script>
-  (function() {
-    const select = document.getElementById('restaurant-sort');
-    const list    = document.getElementById('restaurant-list');
+(function() {
+  const sortSelect = document.getElementById('restaurant-sort');
+  const list = document.getElementById('restaurant-list');
 
-    select.addEventListener('change', () => {
-      const key = select.value;
-      // build array of <li>
-      const items = Array.from(list.children);
+  function sortList() {
+    const key = sortSelect.value;
+    const items = Array.from(list.children);
 
-      items.sort((a, b) => {
-        let va = a.dataset[key].toLowerCase();
-        let vb = b.dataset[key].toLowerCase();
+    items.sort((a, b) => {
+      let va = a.dataset[key] || '';
+      let vb = b.dataset[key] || '';
 
-        if (key === 'price') {
-          // sort by length of "$" string (shorter = cheaper)
-          return va.length - vb.length;
-        }
-        // alphabetical for location & type
-        return va.localeCompare(vb);
-      });
+      // Normalize for comparison
+      va = va.toLowerCase();
+      vb = vb.toLowerCase();
 
-      // re-append in new order
-      items.forEach(li => list.appendChild(li));
+      if (key === 'price') {
+        // Sort by number of dollar signs
+        return va.length - vb.length;
+      }
+
+      // Alphabetical sort for location and type
+      return va.localeCompare(vb);
     });
-  })();
+
+    // Re-append in sorted order
+    items.forEach(item => list.appendChild(item));
+  }
+
+  sortSelect.addEventListener('change', sortList);
+})();
 </script>
 
 
