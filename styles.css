@@ -373,12 +373,6 @@ a {
 }
 
 @media (max-width: 600px) {
-  .header-top {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 0.75em;
-  }
-
   .site-logo {
     width: 64px;
   }
@@ -386,7 +380,13 @@ a {
   .lang-switcher {
     font-size: 0.8rem;
   }
+
+  .header-top {
+    padding: 0 0.75em;
+  }
 }
+
+
 
 
 
