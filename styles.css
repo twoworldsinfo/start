@@ -264,9 +264,9 @@ a {
   position: absolute;
   top: 0.75em;
   left: 1em;
-  width: 40px;       /* adjust for your taste */
+  width: 80px; /* doubled from 40px */
   height: auto;
-  z-index: 10;       /* stays above other elements */
+  z-index: 10;
 }
 
 .site-logo img {
@@ -342,8 +342,9 @@ a {
   .site-logo {
     top: 1em;
     left: 0.75em;
-    width: 32px;
+    width: 64px; /* also larger than before */
   }
 }
+
 
 
