@@ -228,6 +228,7 @@ a {
     font-size: 0.8rem;
   }
 }
+
 .sort-controls {
   margin: 1em 0;
   text-align: center;
@@ -257,40 +258,6 @@ a {
 
 /* ─── Favorites & Filters ───────────────────────────── */
 .restaurant-controls {
-  margin: 1em 0;
-  text-align: center;
-}
-.restaurant-controls select {
-  padding: 0.25em 0.5em;
-  font-size: 1rem;
-  margin-right: 1em;
-}
-.price-filter {
-  display: inline-block;
-  margin-left: 1em;
-}
-.price-filter label {
-  margin: 0 0.5em;
-  font-size: 0.95rem;
-}
-.favorites-toggle {
-  margin-left: 1em;
-  font-size: 0.95rem;
-}
-.favorites-toggle input {
-  margin-right: 0.25em;
-}
-.favorite-star {
-  color: gold;
-  font-size: 1.2rem;
-  margin-left: 0.25em;
-}
-.restaurant-meta {
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 0.25em;
-}
-.restaurant-controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -298,32 +265,56 @@ a {
   margin: 1em 0;
   font-size: 1rem;
 }
-
 .restaurant-controls select {
   padding: 0.25em 0.5em;
   font-size: 1rem;
 }
-
 .price-options label {
   margin-right: 0.5em;
   font-size: 0.95rem;
 }
-
 .favorites-toggle {
   font-size: 0.95rem;
 }
 .favorites-toggle input {
   margin-right: 0.25em;
 }
-
 .favorite-star {
   color: gold;
   font-size: 1.2rem;
   margin-left: 0.25em;
 }
-
 .restaurant-meta {
   font-size: 0.9rem;
   color: #777;
   margin-top: 0.25em;
+}
+
+/* ─── Option 2: Dual Theme via prefers-color-scheme ───────────────── */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  select,
+  .price-options input {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  select,
+  .price-options input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }
