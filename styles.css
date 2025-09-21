@@ -62,9 +62,9 @@ li {
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  margin-bottom: 1em;
+  align-items: center;       /* logo + switch stay on same baseline */
+  padding: 1em 1em 0;         /* 1em top + sides, 0 bottom */
+  margin-bottom: 1.5em;       /* space before your H1 */
 }
 
 .site-logo {
@@ -237,16 +237,15 @@ a {
   line-height: 1.2 !important;
   font-weight: inherit !important;
 }
+.page-title,
+.page-description {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* 17. Language-switcher placement & overlap fix */
-.lang-switcher {
-  position: absolute;
-  top: 0.5em;
-  right: 1em;
-  font-size: 0.9rem;
-  line-height: 1;
-  white-space: nowrap;
-}
+
 .lang-switcher a {
   color: #555;
   text-decoration: none;
@@ -290,24 +289,8 @@ a {
   margin-top: 0.25em;
 }
 
-.page-header {
-  position: relative; /* enables absolute positioning inside */
-}
 
-.site-logo {
-  position: absolute;
-  top: 0.75em;
-  left: 1em;
-  width: 80px; /* doubled from 40px */
-  height: auto;
-  z-index: 10;
-}
 
-.site-logo img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
 /* ─── Favorites & Filters ───────────────────────────── */
 .restaurant-controls {
@@ -385,6 +368,7 @@ a {
     padding: 0 0.75em;
   }
 }
+
 
 
 
