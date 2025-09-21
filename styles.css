@@ -338,3 +338,12 @@ a {
   }
 }
 
+@media (max-width: 600px) {
+  .site-logo {
+    top: 1em;
+    left: 0.75em;
+    width: 32px;
+  }
+}
+
+
