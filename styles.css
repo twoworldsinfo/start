@@ -356,18 +356,20 @@ a {
 }
 
 @media (max-width: 600px) {
-  .site-logo {
-    width: 64px;
-  }
-
-  .lang-switcher {
-    font-size: 0.8rem;
-  }
-
-  .header-top {
-    padding: 0 0.75em;
-  }
+.header-top {
+  padding: 1em 0.75em 0;
+  margin-bottom: 1em;
 }
+
+.site-logo {
+  width: 64px;
+}
+
+.lang-switcher {
+  font-size: 0.8rem;
+}
+
+
 
 
 
