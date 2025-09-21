@@ -356,10 +356,25 @@ a {
 }
 
 @media (max-width: 600px) {
-.header-top {
-  padding: 1em 0.75em 0;
-  margin-bottom: 1em;
+  /* Kill any top padding you set on body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Remove header’s top margin/padding so it hugs the viewport */
+  .page-header {
+    margin: 0 0 1.5em;   /* no top margin, keep bottom spacing */
+    padding-top: 0;
+  }
+
+  /* Tweak the flex bar padding to use all available space */
+  .header-top {
+    padding: 0.5em 0.75em 0;  /* 0.5em top, 0.75em sides, 0 bottom */
+    margin-bottom: 1em;
+  }
 }
+
+
 
 .site-logo {
   width: 64px;
@@ -368,6 +383,25 @@ a {
 .lang-switcher {
   font-size: 0.8rem;
 }
+
+  /* 1. Remove body’s default top padding */
+body {
+  padding-top: 0;
+}
+
+/* 2. Collapse the header’s own margin/padding */
+.page-header {
+  margin: 0 0 2em;    /* no top margin, keep bottom space */
+  padding-top: 0;     /* no extra top padding */
+}
+
+/* 3. Give just enough breathing room inside the flex bar */
+.header-top {
+  padding: 0.5em 1em 0;  /* 0.5em top, 1em sides, 0 bottom */
+  margin-bottom: 1em;    /* space before H1 */
+}
+
+
 
 
 
