@@ -402,6 +402,22 @@ body {
 }
 
 
+/* 1) Kill the 1em body top‐padding */
+body {
+  padding-top: 0;
+}
+
+/* 2) Remove the .page-header’s top margin & padding */
+.page-header {
+  margin-top: 0;     /* no space above */
+  padding-top: 0;    /* no room above the H1 */
+}
+
+/* 3) Keep a tiny bit of breathing room inside the bar */
+.header-top {
+  padding: 0.5em 1em;  /* 0.5em above/below, 1em left/right */
+  margin-bottom: 1em;  /* space between the bar and the title below */
+}
 
 
 
