@@ -256,6 +256,25 @@ a {
   margin-top: 0.25em;
 }
 
+.page-header {
+  position: relative; /* enables absolute positioning inside */
+}
+
+.site-logo {
+  position: absolute;
+  top: 0.75em;
+  left: 1em;
+  width: 40px;       /* adjust for your taste */
+  height: auto;
+  z-index: 10;       /* stays above other elements */
+}
+
+.site-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ─── Favorites & Filters ───────────────────────────── */
 .restaurant-controls {
   display: flex;
@@ -318,3 +337,4 @@ a {
     appearance: none;
   }
 }
+
