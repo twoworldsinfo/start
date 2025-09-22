@@ -420,6 +420,37 @@ body {
 }
 
 
+.supermarket-info {
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 1em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.supermarket-info h2, .supermarket-info h3 {
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.supermarket-info p {
+  margin-bottom: 1em;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.supermarket-info a {
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+.supermarket-info blockquote {
+  background: #f9f9f9;
+  padding: 1em;
+  border-left: 4px solid #ccc;
+  margin: 1em 0;
+}
 
 
 
