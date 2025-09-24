@@ -405,6 +405,20 @@ ul, ol {
   margin-top: 0.25em;
   line-height: 1.4;
 }
+/* ─────────────────────────────────────────────────────────────────────────────
+   Reduce vertical space in subscribe sections
+   ───────────────────────────────────────────────────────────────────────────── */
+#subscribe-top p,
+#subscribe-bottom p {
+  /* shrink the default paragraph bottom-margin */
+  margin-bottom: 0.5em;
+}
+
+#subscribe-top .subscribe-box,
+#subscribe-bottom .subscribe-box {
+  /* pull the box up closer to that label */
+  margin-top: 0.25em;
+}
 
 
 
