@@ -360,3 +360,19 @@ a:hover, a:focus {
   outline: none;
   text-decoration: underline;
 }
+/* 1. Kill the body’s default top padding */
+body {
+  padding-top: 0 !important;
+}
+
+/* 2. Remove the page-header’s top margin & padding */
+.page-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 3. (Optional) Tweak .header-top spacing */
+.header-top {
+  padding-top: 0.5em !important;   /* adjust up/down for your desired gap */
+  margin-bottom: 1em !important;    /* keep space before the H1 */
+}
