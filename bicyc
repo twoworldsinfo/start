@@ -393,35 +393,34 @@
       <p>Decent and very extensive breakfast buffet, just a few minutes from your penthouse; Open 7–11 am</p>
     </li>
 
-    <li data-location="Vidigal" data-price="$$" data-type="Breakfast">
-      <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Café e Mar
-      </a>
-      <span class="favorite-star">⭐</span>
-      <div class="restaurant-meta">Vidigal · $$ · Breakfast</div>
-      <p>A fancy place with an incredible view and really good food; very closeby - an adventurous ride up the favela hill via van or motortaxi - 10 BRL per person. Reservation required! </p>
-    </li>
+   <li data-location="Vidigal" data-price="$$" data-type="Breakfast">
+  <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
+    Café e Mar <span class="favorite-star">⭐</span>
+  </a>
+  <div class="restaurant-meta">Vidigal · $$ · Breakfast</div>
+  <p>A fancy place with an incredible view and really good food; very closeby - an adventurous ride up the favela hill via van or motortaxi - 10 BRL per person. Reservation required!</p>
+</li>
 
-    <li data-location="Leblon" data-price="$$" data-type="Bakery">
-      <a href="https://www.google.com/maps/search/La+Bicyclette+Rio+de+Janeiro" target="_blank" rel="noopener">
-        La Bicyclette
-      </a>
-      <span class="favorite-star">⭐</span>
-      <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-      <p>
-        The best bread and baguette can be found at a French bakery named La Bicyclette. They also serve really good breakfast, sandwiches, and cakes. It’s a great place to shop for artisanal cheeses, handmade butter, and more.
-        They also offer delivery with their own <a href="https://delivery.labicyclette.com.br/labicyclette" target="_blank" rel="noopener">
-          app
-        </a>
-      </p>
-      <p>
-        They have three locations; one is very close in Leblon, and the main one is next to the Botanical Garden —
-        <a href="https://maps.app.goo.gl/jj4ZD9g2oeaaj5H66" target="_blank" rel="noopener noreferrer">view on map</a>.
-      </p>
-      <p>
-        One downside, though: they sell some cakes and breads that haven’t been baked on the same day. Still good—but for the price, a bit cheeky, in my opinion.
-      </p>
-    </li>
+
+   <li data-location="Leblon" data-price="$$" data-type="Bakery">
+  <a href="https://www.google.com/maps/search/La+Bicyclette+Rio+de+Janeiro" target="_blank" rel="noopener">
+    La Bicyclette <span class="favorite-star">⭐</span>
+  </a>
+  <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
+  <p>
+    The best bread and baguette can be found at a French bakery named La Bicyclette. They also serve really good breakfast, sandwiches, and cakes. It’s a great place to shop for artisanal cheeses, handmade butter, and more.
+    They also offer delivery with their own <a href="https://delivery.labicyclette.com.br/labicyclette" target="_blank" rel="noopener">app</a>.
+  </p>
+  <p>
+    They have three locations; one is very close in Leblon, and the main one is next to the Botanical Garden —
+    <a href="https://maps.app.goo.gl/jj4ZD9g2oeaaj5H66" target="_blank" rel="noopener noreferrer">view on map</a>.
+  </p>
+  <p>
+    One downside, though: they sell some cakes and breads that haven’t been baked on the same day. Still good—but for the price, a bit cheeky, in my opinion.
+  </p>
+</li>
+
+
 
     <li data-location="Leblon" data-price="$" data-type="Breakfast">
       <a href="https://www.google.com/maps/search/Nema+Padaria+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
@@ -948,6 +947,7 @@ Also, on the Arpoador rock there are sometimes criminals trying to take advantag
   updateList(true);
 })();
 </script>
+
 
 
 
