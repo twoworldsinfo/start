@@ -100,9 +100,12 @@ nav ul {
   padding: 0;
   text-align: center;
 }
+/* restore default inline links */
 nav ul li a {
-  display: inline-block;
-  padding: 0 0.75em;  /* adds left/right padding inside the link */
+  font-size: 1.1rem;
+  display: inline;
+  padding: 0;
+}
 nav ul li + li::before {
   content: "|";
   margin: 0 0.5em;
@@ -395,6 +398,7 @@ body {
   padding-top: 0.5em !important;   /* adjust up/down for your desired gap */
   margin-bottom: 1em !important;    /* keep space before the H1 */
 }
+
 
 
 
