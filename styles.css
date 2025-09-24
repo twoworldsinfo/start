@@ -43,8 +43,8 @@ h3 { font-size: 1.25rem; }
 p {
   margin: 0 0 1.25em;
 }
+/* reverted: keep bullets by default */
 ul, ol {
-  list-style: none;          /* remove bullets from all lists */
   margin: 0 0 1.25em 1.5em;
   padding: 0;
 }
@@ -110,7 +110,7 @@ nav ul li + li::before {
   color: #888;
 }
 nav ul li a {
-  font-size: 1.1rem;         /* desktop size restored */
+  font-size: 1.1rem;
   display: inline;
   padding: 0;
 }
@@ -203,7 +203,7 @@ a {
 /* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
   nav ul li a {
-    font-size: 1.6rem;       /* mobile size restored */
+    font-size: 1.6rem;
     padding: 0;
   }
   .back-to-top {
@@ -278,6 +278,13 @@ a {
   margin-right: 12px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+/* Remove bullets only on the restaurant list */
+#restaurant-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* 18. Dark/Light Theme */
