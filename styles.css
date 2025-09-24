@@ -396,16 +396,16 @@ ul, ol {
   margin: 0.5em 0;                /* vertical spacing between items */
   padding: 0;                     /* no extra left padding */
 }
-
-/* Restore smaller grey styling for restaurant meta line */
-#restaurant-list li .restaurant-meta {
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 0.25em;    /* optional spacing above the meta line */
-}
+/* ───────────────────────────────────────────────────────────────
+   Restaurant meta (Leblon · $$ · Breakfast) — small & grey
+   ─────────────────────────────────────────────────────────────── */
 #restaurant-list li .restaurant-meta {
   font-size: 0.9rem !important;
-  color: #777 !important;
+  color:     #777    !important;
+  margin-top: 0.25em;
+  line-height: 1.4;
 }
+
+
 
 
