@@ -241,6 +241,24 @@ a {
   margin-right: auto;
 }
 
+@media (max-width: 600px) {
+  /* 1. Slightly smaller nav links */
+  nav ul li a {
+    font-size: 1rem;       /* down from 1.6rem → 1rem */
+  }
+
+  /* 2. Bump up content text to match .page-description (1.1rem) */
+  .container p,
+  .container li,
+  .subscribe-box input,
+  .subscribe-box button,
+  .restaurant-controls,
+  .price-options label {
+    font-size: 1.1rem;     /* same size as your subtitle text */
+    line-height: 1.5;      /* preserve good readability */
+  }
+}
+
 /* 17. Restaurant Controls & Filters */
 .restaurant-controls {
   display: flex;
@@ -378,4 +396,5 @@ ul, ol {
   margin: 0.5em 0;                /* vertical spacing between items */
   padding: 0;                     /* no extra left padding */
 }
+
 
