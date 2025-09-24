@@ -370,11 +370,16 @@
       <option value="type">Cuisine</option>
     </select>
 
-    <span class="price-options">
-      <label><input type="checkbox" value="$" checked> $</label>
-      <label><input type="checkbox" value="$$" checked> $$</label>
-      <label><input type="checkbox" value="$$$" checked> $$$</label>
-    </span>
+   <span class="price-options">
+  <input type="checkbox" id="price1" value="$" checked>
+  <label for="price1">$</label>
+
+  <input type="checkbox" id="price2" value="$$" checked>
+  <label for="price2">$$</label>
+
+  <input type="checkbox" id="price3" value="$$$" checked>
+  <label for="price3">$$$</label>
+</span>
 
     <label class="favorites-toggle">
       <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
@@ -784,6 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyFilters();
 });
 </script>
+
 
 
 
