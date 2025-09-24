@@ -386,41 +386,29 @@
     <!-- Breakfast Spots -->
     <li data-location="Leblon" data-price="$$" data-type="Breakfast" data-favorite="true">
       <a href="https://www.google.com/maps/search/Sheraton+Grand+Rio+Hotel+%26+Resort+breakfast+buffet+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Sheraton Hotel
+        Sheraton Hotel <span class="favorite-star">⭐</span>
       </a>
-      <span class="favorite-star">⭐</span>
       <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
       <p>Decent and very extensive breakfast buffet, just a few minutes from your penthouse; Open 7–11 am</p>
     </li>
 
-   <li data-location="Vidigal" data-price="$$" data-type="Breakfast">
-  <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
-    Café e Mar <span class="favorite-star">⭐</span>
-  </a>
-  <div class="restaurant-meta">Vidigal · $$ · Breakfast</div>
-  <p>A fancy place with an incredible view and really good food; very closeby - an adventurous ride up the favela hill via van or motortaxi - 10 BRL per person. Reservation required!</p>
-</li>
+    <li data-location="Vidigal" data-price="$$" data-type="Breakfast" data-favorite="true">
+      <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
+        Café e Mar <span class="favorite-star">⭐</span>
+      </a>
+      <div class="restaurant-meta">Vidigal · $$ · Breakfast</div>
+      <p>A fancy place with an incredible view and really good food; very closeby - an adventurous ride up the favela hill via van or motortaxi - 10 BRL per person. Reservation required!</p>
+    </li>
 
-
-   <li data-location="Leblon" data-price="$$" data-type="Bakery">
-  <a href="https://www.google.com/maps/search/La+Bicyclette+Rio+de+Janeiro" target="_blank" rel="noopener">
-    La Bicyclette <span class="favorite-star">⭐</span>
-  </a>
-  <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-  <p>
-    The best bread and baguette can be found at a French bakery named La Bicyclette. They also serve really good breakfast, sandwiches, and cakes. It’s a great place to shop for artisanal cheeses, handmade butter, and more.
-    They also offer delivery with their own <a href="https://delivery.labicyclette.com.br/labicyclette" target="_blank" rel="noopener">app</a>.
-  </p>
-  <p>
-    They have three locations; one is very close in Leblon, and the main one is next to the Botanical Garden —
-    <a href="https://maps.app.goo.gl/jj4ZD9g2oeaaj5H66" target="_blank" rel="noopener noreferrer">view on map</a>.
-  </p>
-  <p>
-    One downside, though: they sell some cakes and breads that haven’t been baked on the same day. Still good—but for the price, a bit cheeky, in my opinion.
-  </p>
-</li>
-
-
+    <li data-location="Leblon" data-price="$$" data-type="Bakery" data-favorite="true">
+      <a href="https://www.google.com/maps/search/La+Bicyclette+Rio+de+Janeiro" target="_blank" rel="noopener">
+        La Bicyclette <span class="favorite-star">⭐</span>
+      </a>
+      <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
+      <p>The best bread and baguette can be found at a French bakery named La Bicyclette. They also serve really good breakfast, sandwiches, and cakes. It’s a great place to shop for artisanal cheeses, handmade butter, and more. They also offer delivery with their own <a href="https://delivery.labicyclette.com.br/labicyclette" target="_blank" rel="noopener">app</a>.</p>
+      <p>They have three locations; one is very close in Leblon, and the main one is next to the Botanical Garden — <a href="https://maps.app.goo.gl/jj4ZD9g2oeaaj5H66" target="_blank" rel="noopener noreferrer">view on map</a>.</p>
+      <p>One downside, though: they sell some cakes and breads that haven’t been baked on the same day. Still good—but for the price, a bit cheeky, in my opinion.</p>
+    </li>
 
     <li data-location="Leblon" data-price="$" data-type="Breakfast">
       <a href="https://www.google.com/maps/search/Nema+Padaria+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
@@ -443,7 +431,7 @@
         Confeitaria Rio Lisboa
       </a>
       <div class="restaurant-meta">Leblon · $ · Breakfast</div>
-      <p> A classic Rio bakery / shop, where you can get sandwiches and all sorts of baked goods and juices for a more reasonable price. They also have rotisserie chicken!</p>
+      <p>A classic Rio bakery / shop, where you can get sandwiches and all sorts of baked goods and juices for a more reasonable price. They also have rotisserie chicken!</p>
     </li>
 
     <li data-location="Ipanema" data-price="$" data-type="Juice bar">
@@ -471,11 +459,10 @@
       <p>Quite simply the best ice cream in Rio de Janeiro.</p>
     </li>
 
-    <li data-location="Ipanema" data-price="$$$" data-type="Seafood">
+    <li data-location="Ipanema" data-price="$$$" data-type="Seafood" data-favorite="true">
       <a href="https://maps.app.goo.gl/2yNDJJazuKy1Ms9T7" target="_blank" rel="noopener">
-        Satyricon
+        Satyricon <span class="favorite-star">⭐</span>
       </a>
-      <span class="favorite-star">⭐</span>
       <div class="restaurant-meta">Ipanema · $$$ · Seafood</div>
       <p>Fancy seafood restaurant, with impeccable service and the freshest fish in Rio! A personal favorite of mine. Try the lobster!</p>
     </li>
@@ -485,7 +472,7 @@
         Momo Gelato
       </a>
       <div class="restaurant-meta">Leblon · $$ · Ice Cream</div>
-      <p>Decent ice cream with branches all over Rio </p>
+      <p>Decent ice cream with branches all over Rio</p>
     </li>
 
     <li data-location="Leblon" data-price="$$" data-type="Ice Cream">
@@ -497,131 +484,7 @@
     </li>
 
     <li data-location="Leblon" data-price="$" data-type="Ice Cream">
-      <a href="https://www.google.com/maps/search/Oakberry+Acai+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Oakberry
-      </a>
-      <div class="restaurant-meta">Leblon · $ · Ice Cream</div>
-      <p>The best Acai chain in Rio.</p> 
-    </li>
-
-    <li data-location="Ipanema" data-price="$$" data-type="Ice Cream">
-      <a href="https://maps.app.goo.gl/u3AKpfJN69KHqqYm8" target="_blank" rel="noopener">
-        Amazônia Soul
-      </a>
-      <span class="favorite-star">⭐</span>
-      <div class="restaurant-meta">Ipanema · $$ · Ice Cream</div>
-      <p>
-        Alright, first, let me say that the category “Ice Cream” is not at all accurate here. This is a restaurant serving typical Amazonian food.
-      </p>
-      <p>
-        The menu features some interesting dishes—the crab meat is definitely worth a try, and the Jambu sauce might be too, though more for the novelty of a sauce that tingles your mouth. However, I go there for another Brazilian classic: the famous açaí bowl.
-      </p>
-      <p>
-        While açaí is often eaten hot and salty as a side dish with fish in the Amazonian region, where the fruit originates, it has conquered the world in its frozen form, served as a dessert or ice cream. Hence the “Ice Cream” label.
-      </p>
-      <p>
-        Fun fact: açaí first became popular as an exported product in the U.S., and only afterward was embraced with open arms by the rest of Brazil.
-      </p>
-      <p>
-        Anyway, açaí is now everywhere—hundreds of street food vendors and açaí shops sell this originally extremely healthy superfood. I say “originally” because most of what you get today is industrially processed junk, full of guaraná syrup (which has nothing to do with actual guaraná—that’s another story. The syrup is basically just sugar).
-      </p>
-      <p>
-        In this restaurant, however, you still get the real deal. So if you want to experience the true taste of açaí and do something good for your body while you're at it, go there, order an açaí bowl, and be happy. It’s really worth the visit!
-      </p>
-    </li>
-
-    <!-- Dining Out -->
-    <li data-location="Ipanema" data-price="$" data-type="Burger">
-      <a href="https://www.google.com/maps/search/Burgers+Rio+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Burgers Rio Ipanema
-      </a>
-      <div class="restaurant-meta">Ipanema · $ · Burger</div>
-    </li>
-
-    <li data-location="Lagoa" data-price="$$$" data-type="Churrascaria">
-      <a href="https://www.google.com/maps/search/Rio+Brasa+Lagoa+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Rio Brasa Lagoa
-      </a>
-      <div class="restaurant-meta">Lagoa · $$$ · Churrascaria</div>
-    </li>
-
-    <li data-location="Leblon" data-price="$$$" data-type="Churrascaria">
-      <a href="https://www.google.com/maps/search/Assador+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Assador
-      </a>
-      <div class="restaurant-meta">Leblon · $$$ · Churrascaria</div>
-    </li>
-
-    <li data-location="Ipanema" data-price="$$" data-type="Vegan">
-      <a href="https://www.google.com/maps/search/Teva+Vegetal+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Teva
-      </a>
-      <div class="restaurant-meta">Ipanema · $$ · Vegan</div>
-      <p>(sophisticated vegan)</p>
-    </li>
-
-    <li data-location="Leblon" data-price="$" data-type="Quilo">
-      <a href="https://www.google.com/maps/search/Bella+Blu+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Bella Blu
-      </a>
-      <div class="restaurant-meta">Leblon · $ · Quilo</div>
-      <p>(restaurante de quilo)</p>
-    </li>
-
-    <li data-location="Botafogo" data-price="$$" data-type="Mexican">
-      <a href="https://www.google.com/maps/search/Guadalupe+Botafogo+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Guadalupe
-      </a>
-      <div class="restaurant-meta">Botafogo · $$ · Mexican</div>
-      <p>(authentic Mexican in Botafogo)</p>
-    </li>
-
-    <li data-location="Rio de Janeiro" data-price="$" data-type="Pizza">
-      <a href="https://www.google.com/maps/search/Parma+Pizzaria+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Parma
-      </a>
-      <div class="restaurant-meta">Rio de Janeiro · $ · Pizza</div>
-      <p>(all-you-can-eat pizza)</p>
-    </li>
-
-    <li data-location="Leblon" data-price="$$" data-type="Buffet">
-      <a href="https://www.google.com/maps/search/Rascal+Shopping+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Rascal
-      </a>
-      <div class="restaurant-meta">Leblon · $$ · Buffet</div>
-      <p>(Italian buffet in Shopping Leblon)</p>
-    </li>
-
-    <li data-location="Leblon" data-price="$$" data-type="Bistro">
-      <a href="https://www.google.com/maps/search/Livraria+Da+Travessa+Shopping+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Livraria da Travessa Bistro
-      </a>
-      <div class="restaurant-meta">Leblon · $$ · Bistro</div>
-    </li>
-
-    <li data-location="Copacabana" data-price="$$$" data-type="Sushi">
-      <a href="https://www.google.com/maps/place/Haru+Sushi+Bar+Copacabana+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Haru Sushi Bar
-      </a>
-      <div class="restaurant-meta">Copacabana · $$$ · Sushi</div>
-    </li>
-
-    <li data-location="Leblon" data-price="$$$" data-type="Sushi">
-      <a href="https://www.google.com/maps/search/San+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-        San Leblon
-      </a>
-      <div class="restaurant-meta">Leblon · $$$ · Sushi</div>
-    </li>
-
-    <li data-location="Leblon" data-price="$$$" data-type="Sushi">
-      <a href="https://www.google.com/maps/search/Pabu+Izakaya+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Pabu Izakaya
-      </a>
-      <div class="restaurant-meta">Leblon · $$$ · Sushi</div>
-    </li>
-
-  </ul>
-</section>
+      <a href="https://www.google.com/maps/search/Oakberry+Acai
 
 
 <section id="beaches">
@@ -947,6 +810,7 @@ Also, on the Arpoador rock there are sometimes criminals trying to take advantag
   updateList(true);
 })();
 </script>
+
 
 
 
