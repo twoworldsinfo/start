@@ -397,4 +397,21 @@ ul, ol {
   padding: 0;                     /* no extra left padding */
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Restaurant list “price • location • type” styling
+   ───────────────────────────────────────────────────────────────────────────── */
+/* If you wrap those details in a <small>…</small> inside each <li> */
+#restaurant-list li small {
+  display: block;           /* wraps onto its own line */
+  font-size: 0.9rem;        /* smaller than main text */
+  color: #777;              /* medium grey */
+  margin-top: 0.25em;       /* slight gap above it */
+}
+
+/* Or, if you use a class (e.g. <p class="meta">…</p>) */
+#restaurant-list li .meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.25em;
+}
 
