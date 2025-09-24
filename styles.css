@@ -378,3 +378,16 @@ ul, ol {
   margin: 0.5em 0;                /* vertical spacing between items */
   padding: 0;                     /* no extra left padding */
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Constrain header and nav to the container width
+   ───────────────────────────────────────────────────────────────────────────── */
+.page-header,
+nav {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
