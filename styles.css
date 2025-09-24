@@ -279,11 +279,10 @@ a {
   font-size: 1rem;
   cursor: pointer;
 }
-.price-options input[type="checkbox"]:checked + label {
-  background: #0077cc;
-  color: #fff;
-  border-color: #0077cc;
+.price-options input[type="checkbox"] {
+  accent-color: #0077cc;
 }
+
 
 .favorites-toggle {
   font-size: 0.95rem;
@@ -348,12 +347,10 @@ a {
     accent-color: currentColor;
   }
 
-  .price-options input[type="checkbox"]:checked + label {
-    background: #0077cc;
-    color: #fff;
-    border-color: #0077cc;
-  }
+  .price-options input[type="checkbox"] {
+  accent-color: #0077cc;
 }
+
 
 /* Dark theme headings */
 @media (prefers-color-scheme: dark) {
@@ -422,3 +419,4 @@ nav ul li a {
   padding: 0;               /* remove your added padding */
   font-size: 1.1rem;        /* restore your base font size */
 }
+
