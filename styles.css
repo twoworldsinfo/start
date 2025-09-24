@@ -100,20 +100,18 @@ nav ul {
   padding: 0;
   text-align: center;
 }
-/* restore default inline links */
-nav ul li a {
-  font-size: 1.1rem;
-  display: inline;
-  padding: 0;
+nav ul li {
+  display: inline-block;
 }
 nav ul li + li::before {
   content: "|";
   margin: 0 0.5em;
   color: #888;
 }
-
 nav ul li a {
   font-size: 1.1rem;
+  display: inline;
+  padding: 0;
 }
 
 /* 9. Subscribe Boxes */
@@ -203,9 +201,10 @@ a {
 
 /* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
+  /* Only adjust font-size; remove extra padding */
   nav ul li a {
     font-size: 1.6rem;
-    padding: 0.6em;
+    padding: 0;
   }
   .back-to-top {
     font-size: 2.4rem;
@@ -272,7 +271,6 @@ a {
   margin-right: 6px;
   cursor: pointer;
 }
-
 .price-options label {
   display: inline-flex;
   align-items: center;
@@ -280,7 +278,8 @@ a {
   margin-right: 12px;
   font-size: 1rem;
   cursor: pointer;
-}-options input[type="checkbox"]:checked + label {
+}
+.price-options input[type="checkbox"]:checked + label {
   background: #0077cc;
   color: #fff;
   border-color: #0077cc;
@@ -382,6 +381,7 @@ a:hover, a:focus {
   outline: none;
   text-decoration: underline;
 }
+
 /* 1. Kill the body’s default top padding */
 body {
   padding-top: 0 !important;
@@ -398,9 +398,3 @@ body {
   padding-top: 0.5em !important;   /* adjust up/down for your desired gap */
   margin-bottom: 1em !important;    /* keep space before the H1 */
 }
-
-
-
-
-
-
