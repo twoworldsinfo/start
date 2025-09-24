@@ -42,10 +42,21 @@
 <section class="page-header">
   <div class="header-top">
     <div class="site-logo">
-      <a href="/" title="Slop Free Content">
-        <img src="Images/slop-free-logo.png" alt="Slop Free Content Logo">
-      </a>
-    </div>
+  <a href="/" title="Slop Free Content – Dark Mode">
+    <picture>
+      <!-- Only use the dark logo when browser/os is in dark theme -->
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="assets/Images/slop-free-logo-dark.png"
+      >
+      <!-- In all other cases, nothing loads here → no fallback image -->
+      <img
+  src="assets/Images/slop-free-logo.png"
+  alt="Slop Free Content Logo"
+>
+    </picture>
+  </a>
+</div>
 
     <div class="lang-switcher">
       <a data-tl="pt">PT</a> |
@@ -796,6 +807,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateList();
 });
 </script>
+
 
 
 
