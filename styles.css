@@ -391,3 +391,31 @@ nav {
   padding-right: 1em;
   box-sizing: border-box;
 }
+/* ─────────────────────────────────────────────────────────────────────────────
+   Constrain Page Header inner elements
+   ───────────────────────────────────────────────────────────────────────────── */
+.page-header {
+  padding: 0 1em;         /* match your .container side-padding */
+  box-sizing: border-box;
+}
+
+.page-header .header-top,
+.page-header .page-title,
+.page-header .page-description {
+  max-width: 700px;
+  margin: 0 auto;         /* center it */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Constrain Navigation
+   ───────────────────────────────────────────────────────────────────────────── */
+nav {
+  padding: 0 1em;         /* same side-padding as content */
+  box-sizing: border-box;
+}
+
+nav ul {
+  max-width: 700px;
+  margin: 0 auto 1em;     /* center it and keep your bottom-margin */
+}
+
