@@ -58,37 +58,31 @@ li {
   padding-top: 1em;
   text-align: center;
 }
-
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;       /* logo + switch stay on same baseline */
-  padding: 1em 1em 0;         /* 1em top + sides, 0 bottom */
-  margin-bottom: 1.5em;       /* space before your H1 */
+  align-items: center;
+  padding: 1em 1em 0;
+  margin-bottom: 1.5em;
 }
-
 .site-logo {
   width: 80px;
   height: auto;
 }
-
 .site-logo img {
   display: block;
   width: 100%;
   height: auto;
 }
-
 .lang-switcher {
   font-size: 0.9rem;
   white-space: nowrap;
 }
-
 .lang-switcher a {
   color: #555;
   text-decoration: none;
   margin: 0 0.25em;
 }
-
 .lang-switcher a:hover {
   text-decoration: underline;
 }
@@ -244,35 +238,55 @@ a {
   margin-right: auto;
 }
 
-/* 17. Language-switcher placement & overlap fix */
-
-.lang-switcher a {
-  color: #555;
-  text-decoration: none;
-  margin: 0 0.25em;
-}
-.lang-switcher a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 600px) {
-  .lang-switcher {
-    top: 1em;
-    right: 0.75em;
-    font-size: 0.8rem;
-  }
-}
-
-.sort-controls {
+/* 17. Restaurant Controls & Filters */
+.restaurant-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
   margin: 1em 0;
-  text-align: center;
+  font-size: 1rem;
 }
-.sort-controls label {
-  margin-right: 0.5em;
-}
-#restaurant-sort {
+.restaurant-controls select {
   padding: 0.25em 0.5em;
   font-size: 1rem;
 }
+
+/* Toggle Buttons for Price Options */
+.price-options {
+  display: flex;
+  gap: 0.5em;
+}
+.price-options input[type="checkbox"] {
+  display: none;
+}
+.price-options label {
+  padding: 0.4em 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: #f9f9f9;
+  transition: all 0.2s ease;
+}
+.price-options input[type="checkbox"]:checked + label {
+  background: #0077cc;
+  color: #fff;
+  border-color: #0077cc;
+}
+
+.favorites-toggle {
+  font-size: 0.95rem;
+}
+.favorites-toggle input {
+  margin-right: 0.25em;
+}
+.favorite-star {
+  color: gold;
+  font-size: 1.2rem;
+  margin-left: 0.25em;
+}
+
 #restaurant-list {
   list-style: none;
   margin: 0;
@@ -289,133 +303,26 @@ a {
   margin-top: 0.25em;
 }
 
-
-
-
-/* ─── Favorites & Filters ───────────────────────────── */
-.restaurant-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1em;
-  margin: 1em 0;
-  font-size: 1rem;
-}
-.restaurant-controls select {
-  padding: 0.25em 0.5em;
-  font-size: 1rem;
-}
-.price-options label {
-  margin-right: 0.5em;
-  font-size: 0.95rem;
-}
-.favorites-toggle {
-  font-size: 0.95rem;
-}
-.favorites-toggle input {
-  margin-right: 0.25em;
-}
-.favorite-star {
-  color: gold;
-  font-size: 1.2rem;
-  margin-left: 0.25em;
-}
-.restaurant-meta {
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 0.25em;
-}
-
-/* ─── Option 2: Dual Theme via prefers-color-scheme ───────────────── */
+/* 18. Dark/Light Theme */
 @media (prefers-color-scheme: light) {
   body {
     background-color: #ffffff;
     color: #000000;
   }
-  select,
-  .price-options input {
-    background-color: #ffffff;
-    color: #000000;
-    -webkit-appearance: none;
-    appearance: none;
-  }
 }
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
     color: #e0e0e0;
   }
-  select,
-  .price-options input {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    -webkit-appearance: none;
-    appearance: none;
+  .price-options label {
+    border-color: #444;
+    background: #1e1e1e;
+    color: #ccc;
+  }
+  .price-options input[type="checkbox"]:checked + label {
+    background: #0077cc;
+    color: #fff;
+    border-color: #0077cc;
   }
 }
-
-@media (max-width: 600px) {
-  /* Kill any top padding you set on body */
-  body {
-    padding-top: 0;
-  }
-
-  /* Remove header’s top margin/padding so it hugs the viewport */
-  .page-header {
-    margin: 0 0 1.5em;   /* no top margin, keep bottom spacing */
-    padding-top: 0;
-  }
-
-  /* Tweak the flex bar padding to use all available space */
-  .header-top {
-    padding: 0.5em 0.75em 0;  /* 0.5em top, 0.75em sides, 0 bottom */
-    margin-bottom: 1em;
-  }
-}
-
-
-
-.site-logo {
-  width: 64px;
-}
-
-.lang-switcher {
-  font-size: 0.8rem;
-}
-
-  /* 1. Remove body’s default top padding */
-body {
-  padding-top: 0;
-}
-
-/* 2. Collapse the header’s own margin/padding */
-.page-header {
-  margin: 0 0 2em;    /* no top margin, keep bottom space */
-  padding-top: 0;     /* no extra top padding */
-}
-
-/* 3. Give just enough breathing room inside the flex bar */
-.header-top {
-  padding: 0.5em 1em 0;  /* 0.5em top, 1em sides, 0 bottom */
-  margin-bottom: 1em;    /* space before H1 */
-}
-
-
-/* 1) Kill the 1em body top‐padding */
-body {
-  padding-top: 0;
-}
-
-/* 2) Remove the .page-header’s top margin & padding */
-.page-header {
-  margin-top: 0;     /* no space above */
-  padding-top: 0;    /* no room above the H1 */
-}
-
-/* 3) Keep a tiny bit of breathing room inside the bar */
-.header-top {
-  padding: 0.5em 1em;  /* 0.5em above/below, 1em left/right */
-  margin-bottom: 1em;  /* space between the bar and the title below */
-}
-
