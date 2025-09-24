@@ -355,3 +355,26 @@ body {
   padding-top: 0.5em !important;
   margin-bottom: 1em !important;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Restore default bullets globally
+   ───────────────────────────────────────────────────────────────────────────── */
+ul, ol {
+  list-style: disc outside;       /* restore bullets */
+  margin: 0 0 1.25em 1.5em;       /* your original indent */
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ONLY the restaurant list: no bullets, flush with surrounding text
+   ───────────────────────────────────────────────────────────────────────────── */
+#restaurant-list {
+  list-style: none;               /* no bullets here */
+  margin: 0;                      /* remove the 1.5em indent */
+  padding: 0;
+}
+
+#restaurant-list li {
+  margin: 0.5em 0;                /* vertical spacing between items */
+  padding: 0;                     /* no extra left padding */
+}
