@@ -203,11 +203,12 @@ a {
 
 /* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
-  /* ↑ bumped mobile nav-link size from 1.6rem to 1.8rem */
   nav ul li a {
-    font-size: 1.8rem;
+    font-size: 1.25rem; /* back to a clean, readable size */
     padding: 0;
   }
+  /* ... */
+}
   .back-to-top {
     font-size: 2.4rem;
     display: block;
@@ -352,3 +353,4 @@ body {
   padding-top: 0.5em !important;
   margin-bottom: 1em !important;
 }
+
