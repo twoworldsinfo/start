@@ -403,5 +403,9 @@ ul, ol {
   color: #777;
   margin-top: 0.25em;    /* optional spacing above the meta line */
 }
+#restaurant-list li .restaurant-meta {
+  font-size: 0.9rem !important;
+  color: #777 !important;
+}
 
 
