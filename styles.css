@@ -44,6 +44,7 @@ p {
   margin: 0 0 1.25em;
 }
 ul, ol {
+  list-style: none;          /* remove bullets from all lists */
   margin: 0 0 1.25em 1.5em;
   padding: 0;
 }
@@ -94,10 +95,9 @@ li {
 }
 
 /* 8. Navigation */
-/* ↑ increased bottom margin to 2em for more space below nav */
 nav ul {
   list-style: none;
-  margin: 0 0 2em;
+  margin: 0 0 1em;
   padding: 0;
   text-align: center;
 }
@@ -109,9 +109,8 @@ nav ul li + li::before {
   margin: 0 0.5em;
   color: #888;
 }
-/* ↑ bumped desktop nav-link size from 1.1rem to 1.25rem */
 nav ul li a {
-  font-size: 1.25rem;
+  font-size: 1.1rem;         /* desktop size restored */
   display: inline;
   padding: 0;
 }
@@ -204,11 +203,9 @@ a {
 /* 15. MOBILE OVERRIDES */
 @media (max-width: 600px) {
   nav ul li a {
-    font-size: 1.25rem; /* back to a clean, readable size */
+    font-size: 1.6rem;       /* mobile size restored */
     padding: 0;
   }
-  /* ... */
-}
   .back-to-top {
     font-size: 2.4rem;
     display: block;
@@ -263,7 +260,6 @@ a {
   display: flex;
   gap: 0.5em;
 }
-/* keep native checkbox appearance and color only the box */
 .price-options input[type="checkbox"] {
   appearance: auto;
   -webkit-appearance: auto;
@@ -307,7 +303,6 @@ a {
     background: #1e1e1e;
     color: #ccc;
   }
-  /* no more :checked + label styling here */
 }
 
 /* Dark theme headings */
@@ -353,4 +348,3 @@ body {
   padding-top: 0.5em !important;
   margin-bottom: 1em !important;
 }
-
