@@ -257,19 +257,26 @@ a {
   display: flex;
   gap: 0.5em;
 }
+/* ✅ Normal checkbox styling for price filters */
 .price-options input[type="checkbox"] {
-  display: none;
-}
-.price-options label {
-  padding: 0.4em 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-right: 6px;
   cursor: pointer;
-  font-size: 0.95rem;
-  background: #f9f9f9;
-  transition: all 0.2s ease;
 }
-.price-options input[type="checkbox"]:checked + label {
+
+.price-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}-options input[type="checkbox"]:checked + label {
   background: #0077cc;
   color: #fff;
   border-color: #0077cc;
@@ -326,3 +333,4 @@ a {
     border-color: #0077cc;
   }
 }
+
