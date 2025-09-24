@@ -837,6 +837,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+  // turn off automatic scroll restoration
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // whenever the page unloads, reset scroll
+  window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+  });
+</script>
+
+
 
 
 
