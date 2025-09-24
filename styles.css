@@ -398,3 +398,27 @@ body {
   padding-top: 0.5em !important;   /* adjust up/down for your desired gap */
   margin-bottom: 1em !important;    /* keep space before the H1 */
 }
+/* — Nav: inline links, no extra padding — */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;    /* keep items side by side */
+  margin: 0;                /* remove any margins you added */
+}
+
+nav ul li + li::before {
+  content: "|";
+  margin: 0 0.5em;          /* half-em space on each side */
+  color: #888;
+}
+
+nav ul li a {
+  display: inline;          /* revert anchors to inline */
+  padding: 0;               /* remove your added padding */
+  font-size: 1.1rem;        /* restore your base font size */
+}
