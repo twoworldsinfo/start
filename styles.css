@@ -322,11 +322,29 @@ a {
     background-color: #121212;
     color: #e0e0e0;
   }
+
+  /* keep select styled, but restore native checkboxes */
+  select {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* checkbox labels */
   .price-options label {
     border-color: #444;
     background: #1e1e1e;
     color: #ccc;
   }
+
+  /* restore native look & use label color for checkmark */
+  .price-options input[type="checkbox"] {
+    -webkit-appearance: auto;
+    appearance: auto;
+    accent-color: currentColor;
+  }
+
   .price-options input[type="checkbox"]:checked + label {
     background: #0077cc;
     color: #fff;
@@ -376,3 +394,4 @@ body {
   padding-top: 0.5em !important;   /* adjust up/down for your desired gap */
   margin-bottom: 1em !important;    /* keep space before the H1 */
 }
+
