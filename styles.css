@@ -334,3 +334,29 @@ a {
   }
 }
 
+/* Dark theme headings */
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3 {
+    color: #f5f5f5;  /* almost white, but softer */
+  }
+}
+
+/* Default/light theme links */
+a {
+  color: #0077cc;  /* calmer mid-tone blue */
+  text-decoration: underline;
+}
+
+/* Dark theme links */
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #66b0ff;  /* softer sky blue */
+  }
+}
+
+/* Hover/focus states */
+a:hover, a:focus {
+  color: #005fa3;  /* deeper for clarity when hovered */
+  outline: none;
+  text-decoration: underline;
+}
