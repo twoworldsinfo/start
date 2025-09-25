@@ -420,6 +420,20 @@ ul, ol {
   margin-top: 0.25em;
 }
 
+/* hide the original flat list */
+#restaurant-list {
+  display: none;
+}
+
+/* style each <summary> */
+#grouped-restaurants details summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+}
+#grouped-restaurants details ul {
+  margin: 0 0 1em 1.5em;  /* indent sub-list */
+}
 
 
 
