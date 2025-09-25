@@ -822,19 +822,24 @@ document.addEventListener("DOMContentLoaded", () => {
       return (!showFavs || isFav) && allowedPrices.includes(price);
     });
 
-  // 2) Sort: favorites first, then by chosen key
+// 2) Sort: first by chosen key, then bubble favorites within each key
 const key = sortSelect.value; // "location" or "type"
 filtered.sort((a, b) => {
+  // 1) compare by location/type
+  const cmp = a.dataset[key].localeCompare(b.dataset[key]);
+  if (cmp !== 0) {
+    return cmp;
+  }
+  // 2) same category → favorites first
   const favA = a.dataset.favorite === "true";
   const favB = b.dataset.favorite === "true";
-
-  // if only one is a favorite, it wins
   if (favA !== favB) {
     return favA ? -1 : 1;
   }
-
-  // otherwise fall back to sorting by location/type
-  return a.dataset[key].localeCompare(b.dataset[key]);
+  // 3) optional: fall back to alphabetical by name
+  const nameA = a.querySelector('a').textContent.trim();
+  const nameB = b.querySelector('a').textContent.trim();
+  return nameA.localeCompare(nameB);
 });
     // 3) Re-render
     listContainer.innerHTML = "";
@@ -862,4 +867,5 @@ filtered.sort((a, b) => {
     window.scrollTo(0, 0);
   });
 </script>
+
 
