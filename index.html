@@ -380,7 +380,14 @@
 <section id="restaurants">
   <h2>Restaurants</h2>
 
-  <div class="restaurant-controls">
+  
+<h2>Restaurants</h2>
+
+<!-- Container for collapsible groups -->
+<div id="grouped-restaurants"></div>
+
+<!-- Original list (we’ll hide via CSS) -->
+<ul id="restaurant-list"> … </ul>  <div class="restaurant-controls">
     <label for="restaurant-sort">Sort by:</label>
     <select id="restaurant-sort">
       <option value="location">Location</option>
@@ -856,6 +863,37 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const list     = document.getElementById('restaurant-list');
+  const items    = Array.from(list.children);
+  const groups   = {};
+
+  // 1) Group <li> by data-type (Cuisine)
+  items.forEach(li => {
+    const type = li.dataset.type || 'Other';
+    groups[type] = groups[type] || [];
+    groups[type].push(li);
+  });
+
+  // 2) Build <details> blocks
+  const container = document.getElementById('grouped-restaurants');
+  Object.entries(groups).forEach(([type, lis]) => {
+    const details = document.createElement('details');
+    details.open = false;
+
+    const summary = document.createElement('summary');
+    summary.textContent = `${type} (${lis.length})`;
+    details.appendChild(summary);
+
+    const ul = document.createElement('ul');
+    lis.forEach(li => ul.appendChild(li));  // moves the <li> from the original list
+    details.appendChild(ul);
+
+    container.appendChild(details);
+  });
+});
+</script>
 
 
 
