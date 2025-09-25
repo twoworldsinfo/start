@@ -380,14 +380,20 @@
 <section id="restaurants">
   <h2>Restaurants</h2>
 
-  
-<h2>Restaurants</h2>
+  <div class="restaurant-controls">
+    <!-- your sort & filter controls -->
+  </div>
 
-<!-- Container for collapsible groups -->
-<div id="grouped-restaurants"></div>
+  <!-- grouping container for <details> -->
+  <div id="grouped-restaurants"></div>
 
-<!-- Original list (we’ll hide via CSS) -->
-<ul id="restaurant-list"> … </ul>  <div class="restaurant-controls">
+  <!-- ONLY ONE restaurant-list, with every <li> in it -->
+  <ul id="restaurant-list">
+    <li data-type="Breakfast" …>…</li>
+    <li data-type="Bakery" …>…</li>
+    <!-- all the rest of your restaurant <li>s here -->
+  </ul>
+
     <label for="restaurant-sort">Sort by:</label>
     <select id="restaurant-sort">
       <option value="location">Location</option>
@@ -894,6 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
 
 
 
