@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <!-- 1. Enable responsive media queries on mobile -->
@@ -10,12 +8,16 @@
   <!-- 2. Force-refresh CSS when you bump the version -->
   <link rel="stylesheet" href="styles.css?v=21" />
 
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
   <style>
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet/dist/leaflet.css"
-/>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     /* ---- Local overrides ---- */
     /* Center the subscribe boxes under their prompt */
     #subscribe-top,
@@ -938,3 +940,4 @@ document.addEventListener('DOMContentLoaded', () => {
   ).addTo(map);
 });
 </script>
+
