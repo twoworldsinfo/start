@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="styles.css?v=21" />
 
   <style>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     /* ---- Local overrides ---- */
     /* Center the subscribe boxes under their prompt */
     #subscribe-top,
@@ -402,17 +407,30 @@
       <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
     </label>
   </div>
-
+<div id="restaurant-map" style="height: 400px; margin-bottom: 1em;"></div>
   <ul id="restaurant-list">
+  <!-- Breakfast Spots -->
+  <li
+    id="sheraton-hotel"
+    data-lat="-22.983056"
+    data-lng="-43.198611"
+    data-location="Leblon"
+    data-price="$$"
+    data-type="Breakfast"
+    data-favorite="true"
+  >
+    <a
+      href="https://www.google.com/maps/search/Sheraton+Grand+Rio+Hotel+%26+Resort+breakfast+buffet+Rio+de+Janeiro"
+      target="_blank"
+      rel="noopener"
+    >
+      Sheraton Hotel <span class="favorite-star">⭐</span>
+    </a>
+    <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
+    <p>Decent and very extensive breakfast buffet, just a few minutes from your penthouse; Open 7–11 am</p>
+  </li>
 
-    <!-- Breakfast Spots -->
-    <li data-location="Leblon" data-price="$$" data-type="Breakfast" data-favorite="true">
-      <a href="https://www.google.com/maps/search/Sheraton+Grand+Rio+Hotel+%26+Resort+breakfast+buffet+Rio+de+Janeiro" target="_blank" rel="noopener">
-        Sheraton Hotel <span class="favorite-star">⭐</span>
-      </a>
-      <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-      <p>Decent and very extensive breakfast buffet, just a few minutes from your penthouse; Open 7–11 am</p>
-    </li>
+
 
     <li data-location="Vidigal" data-price="$$" data-type="Breakfast" data-favorite="true">
       <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
@@ -869,3 +887,54 @@ filtered.sort((a, b) => {
 </script>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) Create the map centered on Rio
+  const map = L.map('restaurant-map').setView([-22.97, -43.18], 12);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // 2) Prepare container objects for layers
+  const typeLayers     = {};
+  const locationLayers = {};
+
+  // 3) Loop over each restaurant <li>
+  document.querySelectorAll('#restaurant-list li').forEach(li => {
+    const lat      = parseFloat(li.dataset.lat);
+    const lng      = parseFloat(li.dataset.lng);
+    const type     = li.dataset.type;
+    const location = li.dataset.location;
+    const nameEl   = li.querySelector('a');
+    const metaEl   = li.querySelector('.restaurant-meta');
+
+    if (!lat || !lng) return;
+
+    // Create or reuse layer groups
+    typeLayers[type]         = typeLayers[type] || L.layerGroup().addTo(map);
+    locationLayers[location] = locationLayers[location] || L.layerGroup();
+
+    // Build popup HTML
+    const popupHTML = `
+      <strong>${nameEl.textContent.trim()}</strong><br>
+      <small>${metaEl.textContent.trim()}</small><br>
+      <a href="#${li.id}">View details ↓</a>
+    `;
+
+    // Create marker & bind popup
+    const marker = L.marker([lat, lng]).bindPopup(popupHTML);
+
+    // Add marker to both its type and location groups
+    marker.addTo(typeLayers[type]);
+    marker.addTo(locationLayers[location]);
+  });
+
+  // 4) Add Layer Controls
+  L.control.layers(
+    /* baseLayers */    locationLayers,
+    /* overlays */      typeLayers,
+    { collapsed: false, position: 'topright' }
+  ).addTo(map);
+});
+</script>
