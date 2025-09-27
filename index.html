@@ -54,6 +54,25 @@
 
   gtag('config', 'G-FLGDD5F7R0');
 </script>
+  <script>
+(function() {
+  const depths = [25, 50, 75];
+  let fired = {};
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY + window.innerHeight) /
+                          document.body.scrollHeight * 100);
+    depths.forEach(d => {
+      if (pct >= d && !fired[d]) {
+        fired[d] = true;
+        gtag('event', 'scroll_depth', {
+          'scroll_percent': d,
+          'page_path': location.pathname
+        });
+      }
+    });
+  });
+})();
+</script>
 </head>
 <body id="top">
 <section class="page-header">
@@ -1036,6 +1055,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ).addTo(map);
 });
 </script>
+
 
 
 
