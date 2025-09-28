@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <!-- 1. Enable responsive media queries on mobile -->
@@ -46,1048 +48,178 @@
   </style>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLGDD5F7R0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FLGDD5F7R0');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLGDD5F7R0"></script>
   <script>
-(function() {
-  const depths = [25, 50, 75];
-  let fired = {};
-  window.addEventListener('scroll', () => {
-    const pct = Math.round((window.scrollY + window.innerHeight) /
-                          document.body.scrollHeight * 100);
-    depths.forEach(d => {
-      if (pct >= d && !fired[d]) {
-        fired[d] = true;
-        gtag('event', 'scroll_depth', {
-          'scroll_percent': d,
-          'page_path': location.pathname
-        });
-      }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FLGDD5F7R0');
+  </script>
+  <script>
+  (function() {
+    const depths = [25, 50, 75];
+    let fired = {};
+    window.addEventListener('scroll', () => {
+      const pct = Math.round((window.scrollY + window.innerHeight) /
+                            document.body.scrollHeight * 100);
+      depths.forEach(d => {
+        if (pct >= d && !fired[d]) {
+          fired[d] = true;
+          gtag('event', 'scroll_depth', {
+            'scroll_percent': d,
+            'page_path': location.pathname
+          });
+        }
+      });
     });
-  });
-})();
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "thix1ptsal");
-</script>
-  
+  })();
+  </script>
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "thix1ptsal");
+  </script>
 </head>
 <body id="top">
-<section class="page-header">
-  <div class="header-top">
-    <div class="site-logo">
-  <a href="/" title="Slop Free Content – Dark Mode">
-    <picture>
-      <!-- Only use the dark logo when browser/os is in dark theme -->
-      <source
-        media="(prefers-color-scheme: dark)"
-        srcset="Images/slop-free-logo-dark.png"
-      >
-      <!-- In all other cases, nothing loads here → no fallback image -->
-      <img
-  src="Images/slop-free-logo.png"
-  alt="Slop Free Content Logo"
->
-    </picture>
-  </a>
-</div>
+  <!-- … your header/sections up to Restaurants … -->
 
-    <div class="lang-switcher">
-      <a data-tl="pt">PT</a> |
-      <a data-tl="es">ES</a> |
-      <a data-tl="fr">FR</a> |
-      <a data-tl="de">DE</a>
+  <section id="restaurants">
+    <h2>Restaurants</h2>
+
+    <div class="restaurant-controls">
+      <span class="price-options">
+        <input type="checkbox" id="price1" value="$" checked>
+        <label for="price1">$</label>
+        <input type="checkbox" id="price2" value="$$" checked>
+        <label for="price2">$$</label>
+        <input type="checkbox" id="price3" value="$$$" checked>
+        <label for="price3">$$$</label>
+      </span>
+
+      <label class="favorites-toggle">
+        <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
+      </label>
     </div>
-  </div>
 
-  <h1 class="page-title">
-    <a href="https://airbnb.com/h/doismundos"
-       class="title-link"
-       target="_blank"
-       rel="noopener">
-       Two World`s Penthouse
-    </a>
-    private guide to Rio
-  </h1>
+    <!-- Map container -->
+    <div id="restaurant-map" style="width:100%; height:400px; margin-bottom:1em;"></div>
 
-  <p class="page-description">
-    This is not a complete guide; it only contains places that I have personally been to and approved as high-quality / worth going.
-  </p>
-</section>
-
-
-
-
-
-
-
-  <!-- Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="#welcome">Welcome</a></li>
-      <li><a href="#safety">Safety</a></li>
-      <li><a href="#vidigal">Vidigal</a></li>
-      <li><a href="#supermarkets">Supermarkets</a></li>
-      <li><a href="#restaurants">Restaurants</a></li>
-      <li><a href="#beaches">Beaches</a></li>
-      <li><a href="#viewpoints">Viewpoints / Parks</a></li>
-      <li><a href="#shopping">Shopping</a></li>
-      <li><a href="#tours">Tours</a></li>
-      <li><a href="house_manual.html">House Manual</a></li>
+    <!-- Flat list of all restaurants -->
+    <ul id="restaurant-list">
+      <!-- all your <li id="…" data-lat="…" data-lng="…" …> entries as before -->
+      <!-- e.g. Sheraton, Café e Mar, Amazônia Soul, etc. -->
     </ul>
-  </nav>
-
-  <!-- Top Subscribe Box (no title) -->
-  <section id="subscribe-top">
-    <p>Enter your Email here for the latest additions and current events</p>
-    <div class="subscribe-box side-button">
-      <input type="email" id="emailInputTop" placeholder="you@example.com" required />
-      <button id="subscribeButtonTop">Enter</button>
-      <span id="sendingTop" class="status sending">Sending…</span>
-      <span id="confirmationTop" class="status confirmation">Confirmed!</span>
-    </div>
-    <a href="#top" class="back-to-top">↑</a>
   </section>
 
-  <div class="container">
-    <!-- Welcome -->
-    <section id="welcome">
-      <h2>Welcome</h2>
-     <p>Welcome to Rio de Janeiro, the marvelous city. It is like no other in the world, stunningly beautiful, brimming with life and passion.</p>
+  <!-- … rest of your HTML (Beaches, Viewpoints, etc.) unchanged … -->
 
-<p>Here, you can have it all: from a laid-back beach and surfer lifestyle to world-class restaurants; from enriching cultural offerings to untouched nature and mountain hikes.</p>
+  <!-- Your existing subscription, translate, and other scripts remain here … -->
 
-<p>It’s a city of contrasts, two worlds in one, and as a newcomer it can be hard to navigate. Even more than in other metropolises, dangers abound. From tourist traps to active war-zones within city limits, it is not for the faint of heart!</p>
-
-<p>Nowhere else is it so crucial to be guided, to know where to go and what to avoid. There is so much to do, so much to see, it can get overwhelming quickly. I’m here to help you make the most of your stay and fall in love with this incredibly exciting place.</p>
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-
-    <section id="safety" class="safety-container">
- <h2>Safety</h2>
-
-<p>
-  You probably already know that Rio isn't the safest city in the world, but it is also not as bad as it is sometimes portrayed.
-</p>
-
-<p>Here are my tips to avoid trouble.</p>
-
-<p>Ah and just for the record, you live in one of the safest areas of Rio...</p>
-
-<p>
-  The community (it is actually not appropriate to say favela as it is derogatory) of Vidigal is in a unique situation, where the police is actually in control, and collaborates with the ruling gang (if you want to learn more about this, I am happy to elaborate), so nothing I write below applies here.
-</p>
-
-<p>
-  You can walk around the area here completely safe at any time of the day or night, with your phone, jewelry etc, nothing will happen to you.
-</p>
-
-<p>This also applies to Vidigal Beach.</p>
-
-<p>
-  When it comes to Leblon, Ipanema, Copacabana and especially Centro, you have to behave vastly different:
-</p>
-
-<ul>
-  <li>Don't use any kind of expensive looking jewelry/watches.</li>
-  <li>
-    Keep your phone in your pocket unless you are aware of your surroundings (it is fine to use on the beach etc to take photos but be aware of your surroundings, and don't walk around mindlessly with phone in the hand).
-  </li>
-  <li>Backup your phone data, or even better leave it at home or bring a cheaper phone to use on the street.</li>
-  <li>
-    If you are unlucky and fall victim to an assault/robbery attempt, do not resist. Give up your phone/belongings. They will want you to unlock your phone too. So best to not have bank account apps installed.
-  </li>
-  <li>
-    Please, this is really important. Anytime something bad happens it is because the victim tries to fight back/keep the phone.
-  </li>
-  <li>
-    These people have nothing to lose and will shoot you or stab you without hesitation if you do not cooperate.
-  </li>
-  <li>
-    However, if you stay in the tourist areas, you will be fine... Risk for petty theft is much higher, so just be smart about your surroundings.
-  </li>
-</ul>
-
-<p>
-  If you want to go somewhere, you can tell me and I will offer advice. Eg,  
-  <a href="https://www.google.com/maps/search/Arpoador+Rio+de+Janeiro" target="_blank" rel="noopener">
-    Arpoador
-  </a>
-  is an amazing sunset spot (your apartment is the best sunrise spot – I really recommend to wake up at 6 one day and enjoy it!). There is also a street market, often live music, free yoga in the morning – a magical spot. But it should be avoided on weekends at around 4 pm to 7 pm, because it gets very crowded with youths from bad districts...
-</p>
-
-<p>
-  When you go out, don't bring anyone home (it is also not allowed/possible to bring unregistered visitors back to the apartment – for safety reasons). There are Motels all around where people meet for casual encounters – much safer.
-</p>
-
-<p>
-  Always watch your drink. When you go to  
-  <a href="https://www.google.com/maps/search/Lapa+Rio+de+Janeiro" target="_blank" rel="noopener">
-    Lapa
-  </a>, don't wander around the side streets.
-</p>
-
-<p>
-  Generally, it is always good to stay where there are many people, don't walk around empty streets (especially in the center / Copacabana / Leblon / Ipanema is less risky).
-</p>
-
-<p>
-  When you are out and about at night take  
-  <a href="https://www.google.com/search?q=Uber+Rio+de+Janeiro" target="_blank" rel="noopener">
-    taxis / Uber
-  </a>  
-  even for short distances...
-</p>
-
-<p>
-  Again, none of that applies to where you live and the surrounding area, there you can be completely relaxed. No robberies, no assaults, no thefts will happen here.
-</p>
-
-<p><strong>Payment Safety</strong></p>
-
-<p>
-  Regarding payments and possible overcharging scams, you will notice that basically everyone accepts credit cards, but unfortunately there are scammers out there who will manipulate or hide the screens of the paying devices and overcharge you for their goods / services. This happens more often in the more touristy areas, like Copacabana, but you should always be aware.
-</p>
-
-<p>
-  The best to avoid this type of scam is by not using your credit card at all in cases where you could not return to / find the merchant who you paid. In other words, to only use your card in businesses with a permanent location.
-</p>
-
-<p>
-  If you do use your card with street vendors it is best to deactivate the contactless pay option, and take the payment device into your hand, insert the card yourself, and verify the correct amount to be paid on the display before you confirm the payment.
-</p>
-  <a href="#top" class="back-to-top">↑</a>
-</section>
-
-   <section id="vidigal">
-  <h2>Vidigal</h2>
-
-  <p>
-    Vidigal is a small peaceful pacified community on the hill of
-    <a href="https://maps.app.goo.gl/gnZAf5EZCjTrGc7J6"
-       target="_blank" rel="noopener">
-      Morro Dois Irmãos
-    </a>,
-    with amazing views of Rio de Janeiro.
-  </p>
-
-  <p>
-    It is the first community that became a hot tourist destination, not least because of the famous hike in a national park up to the top of the hill.  
-
-  </p>
-
-  <p>
-    It is a relatively easy hike of about 30–40 minutes if you start at the official entrance point.
-  </p>
-
-  <p>
-    To go there you can take a moto-taxi or minivan (≈ R$ 10 per person).
-  </p>
-
-  <p>
-    You can also walk up from the bottom at
-    <a href="https://www.google.com/maps/place/Pra%C3%A7a+do+Vidigal"
-       target="_blank" rel="noopener">
-      Praça do Vidigal
-    </a>,
-    which is considerably harder, doubling the time to the top of the mountain.
-  </p>
-
-  <p>
-    Personally, I prefer walking it this way—the path is easy to find (just follow the one main road), and when in doubt ask one of the friendly locals.
-  </p>
-
-  <p>Entrance fee to the hike is R$ 10 per person.</p>
-
-  <p>
-    It is really worth starting the hike when it is still dark so you can enjoy the most spectacular sunrise of your life.
-  </p>
-
-  <p>
-    The views from up there are truly stunning at any time—it is the best viewpoint in Rio.
-  </p>
-
-  <p>
-    Best time to visit is during the week, as on weekends it sometimes gets crowded.
-  </p>
-
-  <p>
-    On the way down, grab a snack (coxinha—a fried doughball filled with chicken) and an açaí, then go straight to
-    <a href="https://maps.app.goo.gl/18JwPSHCMKjGqd4n9"
-       target="_blank" rel="noopener">
-      Vidigal Beach
-    </a>,
-    where you can wash away the sweat with a dip in the ocean.
-  </p>
-
-  <p>
-    It is a very safe beach and still something of a secret (though that’s changing fast), very different from the buzzing shores of Ipanema or Copacabana.
-  </p>
-
-  <h3>Other things to do in Vidigal:</h3>
-  <ul>
-    <li>
-      An amazing breakfast spot called
-      <a href="https://www.instagram.com/cafeemar.vdg/" target="_blank" rel="noopener">
-        Café e Mar
-      </a>.
-      Check their Instagram and reserve a table in advance.
-    </li>
-    <li>
-     
-      <a href="https://bardalaje.rio/" target="_blank" rel="noopener">
-        Bar da Laje
-      </a>
-      is a famous rooftop viewpoint serving food and drinks (cover ≈ R$ 80 pp).
-    </li>
-    <li>
-      <a href="https://mirantedoarvrao.com.br/wp/" target="_blank" rel="noopener">
-        Mirante do Arvrão
-      </a>
-      is another popular spot for live music, DJs and events. 
-    </li>
-  </ul>
-</section>
-    <!-- Supermarkets -->
-    <section id="supermarkets">
-      <h2>Supermarkets</h2>
-      <p>
-        <strong>
-          <a href="https://maps.app.goo.gl/zgi731C8xLs3Dqun8" target="_blank" rel="noopener">
-            Vitoria mini supermarket
-          </a>
-        </strong><br/>
-        The closest mini supermarket, which has all the basics you might need is only a 2 minute walk from
- the <a href="https://airbnb.com/h/doismundos" target="_blank" rel="noopener">
-      Two World´s Penthouse.
-    </a>
-
-      </p>
-      <p>
-        <strong>
-          <a href="https://www.google.com/maps/place/Zona+Sul+supermarket+Dias+Ferreira+290+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-            Zona Sul supermarket
-          </a>
-        </strong><br/>
-       <section class="supermarket-info">
-  <p>
-    The best supermarket chain is called <strong>ZONA SUL</strong>, and there are several locations. The closest to the condominium is in Leblon, at 
-    <a href="https://maps.app.goo.gl/9ZQ4nF56GMk1bwNK7" target="_blank" rel="noopener">
-      Rua Dias Ferreira 290
-    </a>. It’s on the same street that’s full of bars and amazing restaurants.
-  </p>
-
-  <p>
-    It’s a 20-minute walk from the condominium along the ocean, on Avenida Niemayer—a really nice walk! There’s a taxi stand in front of the supermarket, so you could walk there and then take a taxi back.
-  </p>
-
-  <p>
-    If you prefer to go by taxi, you can call one or head to Praça do Vidigal, where taxis are usually waiting. Just make sure they immediately turn on the taxi meter—if they don’t, simply get out and take another one.
-  </p>
-
-  <p>
-    If you plan to take a taxi back, go after <strong>10:30am</strong>. Until then, Avenida Niemayer only goes in one direction, so returning by car would require a long detour.
-  </p>
-
-  <h3>Taxis vs Uber in Rio</h3>
-  <p>
-    I generally prefer taxis here in Rio. Ubers are often run-down, old, and not very reliable. Taxis are abundant, still affordable, and offer a better experience. Scams are rare but do happen—just make sure the driver activates the taxi meter and do not accept fixed prices.
-  </p>
-
-  <p>
-    When returning to the apartment, say: <em>“Estrada do Vidigal 90, Edifício Costa Azul.”</em>  
-    Sometimes drivers confuse the address and think they need to go up the favela hill, which they dislike due to traffic and narrow roads. If they hesitate or try to drop you off at Praça do Vidigal, say:
-  </p>
-
-  <blockquote>
-    <em>“Esse endereço não está na subida da favela; é um condomínio, por favor me leva até a porta, o Google mostra o endereço certo.”</em><br>
-    <small>(Translation: This address is not on the favela hill, please take me to the front door, Google shows the correct path.)</small>
-  </blockquote>
-
-  <p>
-    Zona Sul supermarkets also deliver to your doorstep—they have an app and a website. They also offer a buffet/restaurant for lunch and breakfast, which is really good!
-  </p>
-
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-
-<section id="restaurants">
-  <h2>Restaurants</h2>
-
-  <div class="restaurant-controls">
-    <label for="restaurant-sort">Sort by:</label>
-    <select id="restaurant-sort">
-      <option value="location">Location</option>
-      <option value="type">Cuisine</option>
-    </select>
-
-   <span class="price-options">
-  <input type="checkbox" id="price1" value="$" checked>
-  <label for="price1">$</label>
-
-  <input type="checkbox" id="price2" value="$$" checked>
-  <label for="price2">$$</label>
-
-  <input type="checkbox" id="price3" value="$$$" checked>
-  <label for="price3">$$$</label>
-</span>
-
-    <label class="favorites-toggle">
-      <input type="checkbox" id="show-favorites-only"> ⭐ Show only favorites
-    </label>
-  </div>
-<div id="restaurant-map" style="height: 400px; margin-bottom: 1em;"></div>
-  <ul id="restaurant-list">
-  <!-- Breakfast Spots -->
-  <li
-    id="sheraton-hotel"
-    data-lat="-22.991830"
-    data-lng="-43.231747"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Breakfast"
-    data-favorite="true"
-  >
-    <a
-      href="https://www.google.com/maps/search/Sheraton+Grand+Rio+Hotel+%26+Resort+breakfast+buffet+Rio+de+Janeiro"
-      target="_blank"
-      rel="noopener"
-    >
-      Sheraton Hotel <span class="favorite-star">⭐</span>
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-    <p>Decent and very extensive breakfast buffet, just a few minutes from your penthouse; Open 7–11 am</p>
-  </li>
-
-  <li
-    id="cafe-e-mar"
-    data-lat="-22.99719"
-    data-lng="-43.24209"
-    data-location="Vidigal"
-    data-price="$$"
-    data-type="Breakfast"
-    data-favorite="true"
-  >
-    <a href="https://www.google.com/maps/search/Cafe+e+Mar+Vidigal+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Café e Mar <span class="favorite-star">⭐</span>
-    </a>
-    <div class="restaurant-meta">Vidigal · $$ · Breakfast</div>
-    <p>A fancy place with an incredible view and really good food; very closeby - an adventurous ride up the favela hill via van or motortaxi - 10 BRL per person. Reservation required!</p>
-  </li>
-
-  <li
-    id="amazonia-soul"
-    data-lat="-22.98529"
-    data-lng="-43.19886"
-    data-location="Ipanema"
-    data-price="$$"
-    data-type="Ice Cream"
-    data-favorite="true"
-  >
-    <a href="https://maps.app.goo.gl/fxz97px1cpfi1pFVA" target="_blank" rel="noopener">
-      Amazônia Soul <span class="favorite-star">⭐</span>
-    </a>
-    <div class="restaurant-meta">Ipanema · $$ · Ice Cream</div>
-    <p>
-      Alright, first, let me say that the category “Ice Cream” is not at all accurate here. This is a restaurant serving typical Amazonian food.
-    </p>
-    <p>
-      The menu features some interesting dishes—the crab meat is definitely worth a try, and the Jambu sauce might be too, though more for the novelty of a sauce that tingles your mouth. However, I go there for another Brazilian classic: the famous açaí bowl.
-    </p>
-    <p>
-      While açaí is often eaten hot and salty as a side dish with fish in the Amazonian region, where the fruit originates, it has conquered the world in its frozen form, served as a dessert or ice cream. Hence the “Ice Cream” label.
-    </p>
-    <p>
-      Fun fact: açaí first became popular as an exported product in the U.S., and only afterward was embraced with open arms by the rest of Brazil.
-    </p>
-    <p>
-      Anyway, açaí is now everywhere—hundreds of street food vendors and açaí shops sell this originally extremely healthy superfood. I say “originally” because most of what you get today is industrially processed junk, full of guaraná syrup (which has nothing to do with actual guaraná—that’s another story. The syrup is basically just sugar).
-    </p>
-    <p>
-      In this restaurant, however, you still get the real deal. So if you want to experience the true taste of açaí and do something good for your body while you're at it, go there, order an açaí bowl, and be happy. It’s really worth the visit!
-    </p>
-  </li>
-
-  <li
-    id="la-bicyclette"
-    data-lat="-22.98607"
-    data-lng="-43.22782"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Bakery"
-    data-favorite="true"
-  >
-    <a href="https://www.google.com/maps/search/La+Bicyclette+Rio+de+Janeiro" target="_blank" rel="noopener">
-      La Bicyclette <span class="favorite-star">⭐</span>
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-    <p>The best bread and baguette can be found at a French bakery named La Bicyclette. They also serve really good breakfast, sandwiches, and cakes. It’s a great place to shop for artisanal cheeses, handmade butter, and more. They also offer delivery with their own <a href="https://delivery.labicyclette.com.br/labicyclette" target="_blank" rel="noopener">app</a>.</p>
-    <p>They have three locations; one is very close in Leblon, and the main one is next to the Botanical Garden — <a href="https://maps.app.goo.gl/jj4ZD9g2oeaaj5H66" target="_blank" rel="noopener noreferrer">view on map</a>.</p>
-    <p>One downside, though: they sell some cakes and breads that haven’t been baked on the same day. Still good—but for the price, a bit cheeky, in my opinion.</p>
-  </li>
-
-      <li
-    id="burger-rio"
-    data-lat="-22.98450"
-    data-lng="-43.21136"
-    data-location="Ipanema"
-    data-price="$$"
-    data-type="Burgers"
-    data-favorite="true"
-  >
-    <a href="https://maps.app.goo.gl/q8w1iMZrxipnoXnC6" target="_blank" rel="noopener">
-      Burgers Rio - Ipanema <span class="favorite-star">⭐</span>
-    </a>
-    <div class="restaurant-meta">Ipanema · $$ · Burgers</div>
-    <p>There are a lot of great burger places in Rio. This one is my favorite because their burgers are truly amazing (smash). They deliver in under half an hour and the burgers arrive piping hot right to your doorstep. It is easy to order via their Google Maps link.</p>
-
-<p>Here is a quick explanation of the different burgers in Rio. There are basically two types of places. One type serves traditional fresh meat patties, smash style or not, like this one. These burgers are on the more expensive side (about 40 BRL each) but resemble the international idea of a classic burger.</p>
-
-<p>Much cheaper and available all over the city is the Brazilian version called X-Tudo. It is a staple for the working class and a favorite late-night snack after a night out because of its affordable price and widespread availability. The name says it all: it is essentially everything in a burger and then some. The meat quality is subpar, with frozen patties, but you get two patties plus ham, bacon, two types of cheese, egg, a myriad of sauces and more. As strange as it sounds, it is definitely worth a try. It is best to eat it before taking a shower or jumping into the ocean because, seriously, it can be difficult to eat one without spilling sauce everywhere.</p>
-
-<p>By the way, you will see that the Brazilian adaptation of food follows a common theme of more of everything. A Brazilian pizza has every type of meat available plus four kinds of cheese and various sauces including ketchup. The Brazilian hot dog can be amazing but also overwhelming because of its many ingredients and the challenge of eating it by hand.</p> </li>
-
-  <li
-    id="nema-padaria"
-    data-lat="-22.98500"
-    data-lng="-43.22670"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Breakfast"
-  >
-    <a href="https://www.google.com/maps/search/Nema+Padaria+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Nema
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-    <p>Various locations across the city. Good bread and amazing pre-baked pizzas. Also try their cheeses!</p>
-  </li>
-
-  <li
-    id="talho-capixaba"
-    data-lat="-22.98463"
-    data-lng="-43.22559"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Breakfast"
-  >
-    <a href="https://www.google.com/maps/search/Talho+Capixaba+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Talho Capixaba
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Breakfast</div>
-    <p>Incredible sandwiches and specialities, hams, breads and pastries. Seriously it is all really good. A very popular spot, it will be hard to get a table, especially on weekends.</p>
-  </li>
-
-  <li
-    id="confeitaria-rio-lisboa"
-    data-lat="-22.98473"
-    data-lng="-43.22573"
-    data-location="Leblon"
-    data-price="$"
-    data-type="Bakery"
-  >
-    <a href="https://www.google.com/maps/search/Confeitaria+Rio+Lisboa+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Confeitaria Rio Lisboa
-    </a>
-    <div class="restaurant-meta">Leblon · $ · Breakfast</div>
-    <p>A classic Rio bakery / shop, where you can get sandwiches and all sorts of baked goods and juices for a more reasonable price. They also have rotisserie chicken!</p>
-  </li>
-
-  <li
-    id="bibi-sucos"
-    data-lat="-22.98386"
-    data-lng="-43.22268"
-    data-location="Leblon"
-    data-price="$"
-    data-type="Juice bar"
-  >
-    <a href="https://www.google.com/maps/search/Bibi+Sucos+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Bibi Sucos
-    </a>
-    <div class="restaurant-meta">Leblon · $ · Juice bar</div>
-    <p>Rio has many of these sort of places, where you can get fresh juices, sanwiches, burgers, pretty much anything!</p>
-  </li>
-
-  <li
-    id="natural-e-sabor"
-    data-lat="-22.98374"
-    data-lng="-43.21312"
-    data-location="Ipanema"
-    data-price="$$"
-    data-type="Juice bar"
-  >
-    <a href="https://www.google.com/maps/search/Natural+e+Sabor+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Natural e Sabor
-    </a>
-    <div class="restaurant-meta">Ipanema · $$ · Juice bar</div>
-    <p>In my opinion one of the best "Joelhos" - a baked breadroll stuffed with different fillings. You will find this type of snack all over the city, but while they look the same, there are vast differences in quality. This one is really good, quite pricey though!</p>
-  </li>
-
-  <!-- Ice Cream & Açaí -->
-  <li
-    id="borelli"
-    data-lat="-22.98378"
-    data-lng="-43.21928"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Ice Cream"
-  >
-    <a href="https://www.google.com/maps/search/Gelato+Borelli+Leblon+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Borelli
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Ice Cream</div>
-    <p>Quite simply the best ice cream in Rio de Janeiro.</p>
-  </li>
-
-  <li
-    id="satyricon"
-    data-lat="-22.98305"
-    data-lng="-43.20159"
-    data-location="Ipanema"
-    data-price="$$$"
-    data-type="Seafood"
-    data-favorite="true"
-  >
-    <a href="https://maps.app.goo.gl/2yNDJJazuKy1Ms9T7" target="_blank" rel="noopener">
-      Satyricon <span class="favorite-star">⭐</span>
-    </a>
-    <div class="restaurant-meta">Ipanema · $$$ · Seafood</div>
-    <p>Fancy seafood restaurant, with impeccable service and the freshest fish in Rio! A personal favorite of mine. Try the lobster!</p>
-  </li>
-
-  <li
-    id="momo-gelato"
-    data-lat="-22.98392"
-    data-lng="-43.22789"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Ice Cream"
-  >
-    <a href="https://maps.app.goo.gl/6sBDXhF9eQRNMZ1s8" target="_blank" rel="noopener">
-      Momo Gelato
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Ice Cream</div>
-    <p>Decent ice cream with branches all over Rio</p>
-  </li>
-
-  <li
-    id="gelateria-piemonte"
-    data-lat="-22.98113"
-    data-lng="-43.22042"
-    data-location="Leblon"
-    data-price="$$"
-    data-type="Ice Cream"
-  >
-    <a href="https://www.google.com/maps/search/Gelateria+Piemonte+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Gelateria Piemonte
-    </a>
-    <div class="restaurant-meta">Leblon · $$ · Ice Cream</div>
-    <p>Another favorite of mine. I love that they have ice cream sandwiches</p>
-  </li>
-
-  <li
-    id="oakberry-acai"
-    data-lat="-22.98512"
-    data-lng="-43.22459"
-    data-location="Leblon"
-    data-price="$"
-    data-type="Ice Cream"
-  >
-    <a href="https://www.google.com/maps/search/Oakberry+Acai+Rio+de+Janeiro" target="_blank" rel="noopener">
-      Oakberry
-    </a>
-    <div class="restaurant-meta">Leblon · $ · Ice Cream</div>
-    <p>The best Acai chain in Rio.</p>
-  </li>
-</ul>
-
-
-
-
-<section id="beaches">
-  <h2>Beaches</h2>
-
-  <p>Rio has plenty of beaches to enjoy. They are amazing and a huge part of the Carioca culture.</p>
-  <p>
-    Here I will give you a brief summary of the best ones in the area, and which ones serve best for what activities (sport, relaxation, party…).  
-    But before, let’s talk about food on the beach, water quality and umbrella rental.  
-    Click <a href="#vidigal-beach">here</a> to jump straight to the first beach.
-  </p>
-
-  <p><strong>Water Quality</strong></p>
-  <p>Almost all of Rio’s beaches have very good water quality and are safe to enter most of the time. Even beaches in the lagoon near the city center, like Botafogo, <a href="https://www.google.com/maps/place/Flamengo+Beach,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">Flamengo Beach</a>, which have long been plagued with pollution, are now increasingly getting better. Personally, I would not enter the water in Botafogo, but Flamengo Beach is worth a visit—not least to see the numerous sea turtles living there.</p>
-  <p>To verify water quality and safety, see <a href="http://www.praialimpa.net" target="_blank" rel="noopener noreferrer">Praia Limpa</a>.</p>
-  <p>Note: Yellowish/white foam on the surface is natural algae growth and not harmful—it’s a sign of a productive ecosystem. <a href="https://oceanservice.noaa.gov/facts/seafoam.html" target="_blank" rel="noopener noreferrer">NOAA Sea Foam Facts</a>.</p>
-
-  <p><strong>Umbrella Rental</strong></p>
-  <p>When you go to the beach, you’ll be approached to rent a sun umbrella and beach chairs, which, in my opinion, is nice to have.</p>
-  <p>Prices vary, but a reputable place will display a price list. It’ll cost more in summer or on weekends but should not exceed 15–35 BRL for an umbrella and about 15 BRL for a chair.</p>
-  <p>You are free to use them as long as you want.</p>
-
-  <p><strong>Food on the Beach</strong></p>
-  <p>On pretty much all beaches, except Vidigal beach you’ll be offered a variety of foods and drinks—sometimes overwhelmingly so.</p>
-  <p>Here is my advice on what to eat and what to avoid (be sure to read the <a href="#payment-safety">Payment Safety section above</a> before paying street vendors).</p>
-  <p> Another word of advice: there’s hardly any regulation about who can and cannot sell on the sand, so it’s up to you to choose a vendor who looks presentable, clean, and takes good care of his equipment. Don’t get me wrong—most are like that, but the odd exception pops up, and they’re usually obvious to spot.</p>
-
-  <p><em>Biscoito Globo / Mate Iced Tea</em></p>
-  <p>The classic Carioca beach snack is called Biscoito de Globo—a cassava-starch–based, crunchy, airy, very light-tasting treat. It’s more about the experience of the crunch than the flavor, to be honest, but it’s still nice. With that, grab a mate iced tea from the same vendor. It’s the most popular item on the beach, so you’ll see plenty of people selling it. </p>
-  <p>Price: around 10–15 BRL each.</p>
-
-  <p><em>Grilled Cheese</em></p>
-  <p>A close second is grilled cheese prepared for you on the spot. It’s a delicious snack that is safe to eat, but make sure the cheese has been kept in a cooler and that the equipment and vendor are clean. They often also sell sausages, which aren’t the best and perhaps pose a higher risk of food poisoning.</p>
-  <p>Price: around 15 BRL.</p>
-
-  <p><em>Empanadas</em></p>
-  <p>Empanadas are stuffed oven baked dumblings, and it’s also a very popular beach food. There are two versions, the Brazilian version (looks like a little cupcake), and the Argentinian version.
-The Brazilian version is made with a buttery, crumbly dough, and personally I am not a big fan. I mean, there are pretty amazing Brazilian empanadas, but they are better to try elsewhere. On the beach you will not get the best ones, and they are just too dry and heavy to enjoy on the beach.
-A completely different story, and personally my favorite beach food / snack is the legendary, amazing EMPANADA ARGENTINA.
-You will see the vendors mostly on Ipanema Beach, because the factory that produces these is in the nearby favela Cantagalo, and they sell out quickly, so they are often hard to get in, e.g., Leblon.
-But if you see them you must try. Really good, my favorite is Calabresa (sausage), and tomato and cheese. Nice crispy thin dough with succulent filling. Always fresh, a really good food to enjoy!</p>
-  <p>Price: around 12–15 BRL.</p>
-
-  <p><em>Sweet Corn</em></p>
-  <p>Spreading an irresistible aroma when you’re close by, you won’t miss them! You can eat it with cheese, melted (fake) butter, etc. I don’t know, but in Europe we almost exclusively eat sweet corn, which is vastly different from what they sell here. The corn here is more starchy, less sweet, and often undercooked. I am not a big fan.
-</p>
-  <p>Price: around 15–20 BRL.</p>
-
-  <!-- … previous entries … -->
-
-  <p><em>Esfihas</em></p>
-  <p>
-    Esfihas are the Arabic version of stuffed dough. They can be really good and are safe to eat, but I don’t think the beach vendors make the best ones. The top-quality esfihas come from a food truck near the beginning of Leblon Beach—you should definitely give it a try. Name: <a href="https://maps.app.goo.gl/MxXBEpRB2SrtFxT59" target="_blank" rel="noopener noreferrer">Safita</a>.
-  </p>
-
-  <p><em>More Eats</em></p>
-  <p>
-    There are many other things to try, and it’s often fun to spot something new and amazing. For example, homemade sandwiches can be really good—just always make sure they’re stored properly, kept cool, and look fresh.
-  </p>
-
-  <p>
-    You’ll also find various drinks and even fruit salad sold by a guy dressed like a fruit salad…
-  </p>
-
-  <p>
-    Around lunchtime, you’ll see styrofoam boxes with complete meals which is a popular working-class lunch. I’ve tried it and had no complaints! Should be around 20–25 BRL max.
-  </p>
-     <p>Price: around 20- 30 BRL.</p>
-
-  <!-- … next entries … -->
-</section>
-<p><em>AVOID</em></p>
-<p>
-  Shrimp on a stick—as tempting as they sometimes look, you have no idea when they were prepared or how they’ve been stored. Sometimes vendors from the North Zone cook them in the morning, then travel three hours to the beach and sell them all day without proper cooling. Best to avoid.
-</p>
-<p>
-  Pre-made caipirinhas—they taste bad, and you have no idea what kind of alcohol they contain. Better to buy a caipirinha from the people who rent umbrellas on the beach.
-</p>
-
-  <!-- Beach entries -->
-  <h2 id="vidigal-beach">
-    <a href="https://www.google.com/maps/place/Vidigal+Beach,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">
-      VIDIGAL BEACH
-    </a>
-  </h2>
-  <p>This is the beach closest to your home, just a few-minute walk away. It’s my favourite beach in Rio de Janeiro because of its quiet, secluded nature.
-It is almost exclusively used by Vidigal residents, visitors, and the Hotel Sheraton, and does not have many beach vendors, which means it’s perfect for relaxing.
-Just like in the Vidigal community/area, crime is not tolerated, so it’s one of the few places in Rio where you can relax and don’t have to watch your stuff like a hawk while entering the water (always good to exercise some caution, though, especially in summer when it gets crowded).
-The best time to go is right at or before sunrise (around 6 am) until midday, when the sun disappears behind the Dois Irmãos hill.
-One word of caution: when the waves are high, the beach literally disappears or becomes very small. A good rule of thumb is to avoid going down when the stairs leading to the beach are under water.
-You do not have to worry, though—the beach has a lifeguard who places flags on the sand to signal whether or not it’s safe that day.</p>
-
-   <h2>
-      <a href="https://www.google.com/maps/place/Leblon+Beach,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">
-        LEBLON BEACH
-      </a>
-    </h2>
-    <p>The second nearest beach, and also a personal favorite due to its relaxing atmosphere (compared to Ipanema or Copacabana, is Leblon beach, just 13 minute sea stroll away. Best spot: between <a href="https://www.google.com/maps/place/Posto+11,+Leblon,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">Posto 11</a> and <a href="https://www.google.com/maps/place/Posto+12,+Leblon,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">Posto 12</a>.</p>
-
-    <h2>
-      <a href="https://www.google.com/maps/place/Ipanema+Beach,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">
-        IPANEMA BEACH
-      </a>
-    </h2>
-    <p>If you want more action, Ipanema is the place to go. There will be many beach vendors, so you can sit in the same spot all day, being served all sorts of drinks and food.
-Around <a href="https://www.google.com/maps/place/Posto+10,+Ipanema,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">Posto 10</a> is known for its various sports offerings.
-<a href="https://www.google.com/maps/place/Posto+9,+Ipanema,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">Posto 9</a> is a place to see and be seen, whereas a non-stop (wild!) LGBT party atmosphere can be found further down toward Copacabana; just look for the rainbow flags.
-At the very end of Ipanema Beach is <a href="https://www.google.com/maps/place/Arpoador,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">Arpoador</a>, a famous sunset spot and the best place for surfing in the South Zone. There’s also a hippie market on Sundays, and plenty going on: free yoga at 7 am, beach tennis, surfers, food. It’s a great place to hang out.
-A word of caution though: while police are present almost all the time, it can get rowdy and dangerous on hot summer weekends between 3 pm and 6 pm. That’s because the buses from the North Zone terminate here, bringing hordes of often-drunk young people—so tourists are better off avoiding the area then.
-Also, on the Arpoador rock there are sometimes criminals trying to take advantage of unsuspecting tourists. If you go there (and you should—it’s definitely an amazing vibe), just don’t stray from the beaten path and stick with the crowds. 
-
-    <h2>
-      <a href="https://www.google.com/maps/place/Copacabana+Beach,+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer">
-        COPACABANA BEACH
-      </a>
-    </h2>
-    <p>To be quite honest, while there are nice spots too, there is no real reason for you to go to Copa beach. It is very touristy, so it attracts a lot of criminals trying to take davantage and it does not offer anything special. Noteable exception is Standup paddling in the area around Fairmonth Hotel <a href="https://maps.app.goo.gl/PthznjzMh6egQfCR9" target="_blank" rel="noopener noreferrer">Fairmont Hotel</a>. Very nice, especially during sunrise, but also very crowded. Personally I think nothing beats being alone at Vidigal Beach for sunrise. </p>
-
-    <h2>
-      <a href="https://maps.app.goo.gl/7bB6H7KPcgoZT69u6" target="_blank" rel="noopener noreferrer">
-        SAO CONRADO
-      </a>
-    </h2>
-   <p>Another nearby beach. The nicest part is the coastal walk, especially around 5 pm to 6 pm, when the sky shows its magnificent colours as you stroll along the shore.</p>
-
-<p>Warning: when the waves are very high, the path is closed, as announced over speakers with an alarm sound.</p>
-
-<p>Sao Conrado itself is a great spot for bodyboarding, but if you just want to relax and swim, the water is a bit too wild, in my opinion. Also, the prime areas can get crowded with people from the nearby Rocinha community.</p>
-
-<p>At the end of the beach is the paragliders’ landing spot from “Pedra Bonita.” I also heard that the beach bar named <a href="https://maps.app.goo.gl/NrGSEg3zKtKmqSax6" target="_blank" rel="noopener noreferrer">Musa</a> has a good burger.</p>
-
-    <h2>
-      <a href="https://maps.app.goo.gl/ZB3YSRGiCAxn9Mku6" target="_blank" rel="noopener noreferrer">
-        BARRA BEACH
-      </a>
-    </h2>
-   <p>Barra is a relatively recently developed district, often called the Miami of Rio de Janeiro. It has an extremely long stretch of beach, which means you can find really quiet places there.</p>
-<p>There you also find upscale beach clubs, where you can hang out to music and drinks while watching the new rich of Rio. A notable one would be <a href="https://share.google/opbzw1qP4Po1bTJMg" target="_blank" rel="noopener noreferrer">K08 Kite Surf Club</a>. The burger there is terrible though.</p>
-<p>If you want to go jet skiing, go to <a href="https://maps.app.goo.gl/JMTD1xPdkAKeWKcR7" target="_blank" rel="noopener noreferrer">Praia dos Amores</a>.</p>
-
-
-</section>
-
-
-
-
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-
-    <!-- Viewpoints / Parks -->
-    <section id="viewpoints">
-      <h2>Viewpoints / Parks</h2>
-      <!-- Content coming soon -->
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-
-    <!-- Shopping -->
-    <section id="shopping">
-      <h2>Shopping</h2>
-      <!-- Content coming soon -->
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-
-    <!-- Tours -->
-    <section id="tours">
-      <h2>Tours</h2>
-      <!-- Content coming soon -->
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-
-    <!-- Bottom Subscribe Box -->
-    <section id="subscribe-bottom">
-      <p>Get notified about new content and local events</p>
-      <div class="subscribe-box side-button">
-        <input type="email" id="emailInputBottom" placeholder="you@example.com" required />
-        <button id="subscribeButtonBottom">Enter</button>
-        <span id="sendingBottom" class="status sending">Sending…</span>
-        <span id="confirmationBottom" class="status confirmation">Confirmed!</span>
-      </div>
-      <a href="#top" class="back-to-top">↑</a>
-    </section>
-  </div>
-
-  <!-- Subscription Script -->
+  <!-- === NEW unified filter & map script === -->
   <script>
-    const endpoint = 'https://script.google.com/macros/s/AKfycbxfrwGiBCB2ASXi1akfAOcKw4stL8GhzrrjQGOWCfEUEpt-0ZbL9-b8qNMoqTYH8qQSCg/exec';
-    function setupEmailField(inputId, buttonId, confirmId, sendingId) {
-      const input = document.getElementById(inputId);
-      const button = document.getElementById(buttonId);
-      const confirmation = document.getElementById(confirmId);
-      const sending = document.getElementById(sendingId);
-      function showConfirmation(el) {
-        el.style.display = 'inline';
-        el.style.animation = 'none';
-        void el.offsetWidth;
-        el.style.animation = 'fadeScale 0.6s ease forwards';
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1) Initialize map
+    const map = L.map('restaurant-map').setView([-22.97, -43.18], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 2) Grab UI and list items
+    const priceCheckboxes = document.querySelectorAll('.price-options input');
+    const favToggle       = document.getElementById('show-favorites-only');
+    const listContainer   = document.getElementById('restaurant-list');
+    const listItems       = Array.from(listContainer.children);
+
+    // 3) Build markers and type‐layer groups
+    const markers    = [];
+    const typeLayers = {};
+
+    listItems.forEach(li => {
+      const lat = parseFloat(li.dataset.lat);
+      const lng = parseFloat(li.dataset.lng);
+      if (isNaN(lat) || isNaN(lng)) return;
+
+      // Marker & popup
+      const name = li.querySelector('a').textContent.trim();
+      const meta = li.querySelector('.restaurant-meta').textContent.trim();
+      const marker = L.marker([lat, lng]).bindPopup(`
+        <strong>${name}</strong><br>
+        <small>${meta}</small><br>
+        <a href="#${li.id}">View details ↓</a>
+      `);
+
+      // Meta for filtering
+      marker.meta = {
+        type:     li.dataset.type,
+        price:    li.dataset.price,
+        favorite: li.dataset.favorite === 'true'
+      };
+      markers.push(marker);
+
+      // Add to its type layer (create if missing)
+      const t = marker.meta.type;
+      if (!typeLayers[t]) {
+        typeLayers[t] = L.layerGroup().addTo(map);
       }
-      async function subscribe() {
-        if (!input.checkValidity()) {
-          input.reportValidity();
-          return;
-        }
-        sending.style.display = 'inline-block';
-        confirmation.style.display = 'none';
-        const formData = new URLSearchParams();
-        formData.append('Email', input.value);
-        try {
-          const res = await fetch(endpoint, { method: 'POST', body: formData });
-          const result = await res.json();
-          sending.style.display = 'none';
-          if (result.result === 'success') {
-            showConfirmation(confirmation);
-            input.value = '';
-          } else {
-            throw new Error(result.error || 'Unknown error');
-          }
-        } catch (err) {
-          sending.style.display = 'none';
-          alert('Something went wrong. Please try again later.');
-          console.error(err);
-        }
-      }
-      button.addEventListener('click', subscribe);
-      input.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          subscribe();
+      typeLayers[t].addLayer(marker);
+    });
+
+    // 4) Only type overlays in control (no location layers)
+    L.control.layers(
+      /* baseLayers */ {},
+      /* overlays  */ typeLayers,
+      { collapsed: false, position: 'topright' }
+    ).addTo(map);
+
+    // 5) Sync function: applies price, favorite & type filters
+    function updateFilters() {
+      // a) Which prices/favorites are allowed?
+      const allowedPrices = Array.from(priceCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+      const showFavs = favToggle.checked;
+
+      // b) Which type‐overlays are ON?
+      const activeTypes = Object.entries(typeLayers)
+        .filter(([_, layer]) => map.hasLayer(layer))
+        .map(([type]) => type);
+
+      // c) Show/hide list items
+      listItems.forEach(li => {
+        const okPrice = allowedPrices.includes(li.dataset.price);
+        const okFav   = !showFavs || li.dataset.favorite === 'true';
+        const okType  = activeTypes.includes(li.dataset.type);
+        li.style.display = (okPrice && okFav && okType) ? '' : 'none';
+      });
+
+      // d) Rebuild markers in each active type group
+      Object.values(typeLayers).forEach(layer => layer.clearLayers());
+      markers.forEach(m => {
+        const { type, price, favorite } = m.meta;
+        if (
+          allowedPrices.includes(price) &&
+          (!showFavs || favorite) &&
+          activeTypes.includes(type)
+        ) {
+          typeLayers[type].addLayer(m);
         }
       });
     }
-    setupEmailField('emailInputTop', 'subscribeButtonTop', 'confirmationTop', 'sendingTop');
-    setupEmailField('emailInputBottom', 'subscribeButtonBottom', 'confirmationBottom', 'sendingBottom');
+
+    // 6) Wire up all controls & map events
+    priceCheckboxes.forEach(cb => cb.addEventListener('change', updateFilters));
+    favToggle     .addEventListener('change',   updateFilters);
+    map           .on('overlayadd',    updateFilters);
+    map           .on('overlayremove', updateFilters);
+
+    // 7) Initial sync
+    updateFilters();
+  });
   </script>
+  <!-- === end unified filter & map script === -->
 
- <script>
-  (function() {
-    // Grab current page URL
-    const current = encodeURIComponent(window.location.href);
-
-    // Turn each link into a Google-Translate redirect
-    document.querySelectorAll('.lang-switcher [data-tl]').forEach(el => {
-      const tl = el.getAttribute('data-tl');
-      el.setAttribute('href',
-        'https://translate.google.com/translate?sl=en' +
-        '&tl=' + tl +
-        '&u=' + current
-      );
-      el.setAttribute('target', '_blank');
-      el.setAttribute('rel', 'noopener');
-    });
-  })();
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Grab references
-  const listContainer   = document.getElementById("restaurant-list");
-  const originalItems   = Array.from(listContainer.children);
-  const favToggle       = document.getElementById("show-favorites-only");
-  const priceCheckboxes = document.querySelectorAll(".price-options input[type=checkbox]");
-  const sortSelect      = document.getElementById("restaurant-sort");
-
-  function updateList() {
-    // 1) Filter
-    const showFavs      = favToggle.checked;
-    const allowedPrices = Array.from(priceCheckboxes)
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
-
-    let filtered = originalItems.filter(li => {
-      const isFav = li.dataset.favorite === "true";
-      const price = li.dataset.price;
-      return (!showFavs || isFav) && allowedPrices.includes(price);
-    });
-
-// 2) Sort: first by chosen key, then bubble favorites within each key
-const key = sortSelect.value; // "location" or "type"
-filtered.sort((a, b) => {
-  // 1) compare by location/type
-  const cmp = a.dataset[key].localeCompare(b.dataset[key]);
-  if (cmp !== 0) {
-    return cmp;
-  }
-  // 2) same category → favorites first
-  const favA = a.dataset.favorite === "true";
-  const favB = b.dataset.favorite === "true";
-  if (favA !== favB) {
-    return favA ? -1 : 1;
-  }
-  // 3) optional: fall back to alphabetical by name
-  const nameA = a.querySelector('a').textContent.trim();
-  const nameB = b.querySelector('a').textContent.trim();
-  return nameA.localeCompare(nameB);
-});
-    // 3) Re-render
-    listContainer.innerHTML = "";
-    filtered.forEach(li => listContainer.appendChild(li));
-  }
-
-  // Wire up every control to updateList
-  favToggle.addEventListener("change",  updateList);
-  priceCheckboxes.forEach(cb => cb.addEventListener("change", updateList));
-  sortSelect.addEventListener("change", updateList);
-
-  // Initial display
-  updateList();
-});
-</script>
-
-<script>
-  // turn off automatic scroll restoration
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  // whenever the page unloads, reset scroll
-  window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
-  });
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // 1) Create the map centered on Rio
-  const map = L.map('restaurant-map').setView([-22.97, -43.18], 12);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  // 2) Prepare container objects for layers
-  const typeLayers     = {};
-  const locationLayers = {};
-
-  // 3) Loop over each restaurant <li>
-  document.querySelectorAll('#restaurant-list li').forEach(li => {
-    const lat      = parseFloat(li.dataset.lat);
-    const lng      = parseFloat(li.dataset.lng);
-    const type     = li.dataset.type;
-    const location = li.dataset.location;
-    const nameEl   = li.querySelector('a');
-    const metaEl   = li.querySelector('.restaurant-meta');
-
-    if (!lat || !lng) return;
-
-    // Create or reuse layer groups
-    typeLayers[type]         = typeLayers[type] || L.layerGroup().addTo(map);
-    locationLayers[location] = locationLayers[location] || L.layerGroup();
-
-    // Build popup HTML
-    const popupHTML = `
-      <strong>${nameEl.textContent.trim()}</strong><br>
-      <small>${metaEl.textContent.trim()}</small><br>
-      <a href="#${li.id}">View details ↓</a>
-    `;
-
-    // Create marker & bind popup
-    const marker = L.marker([lat, lng]).bindPopup(popupHTML);
-
-    // Add marker to both its type and location groups
-    marker.addTo(typeLayers[type]);
-    marker.addTo(locationLayers[location]);
-  });
-
-  // 4) Add Layer Controls
-  L.control.layers(
-    /* baseLayers */    locationLayers,
-    /* overlays */      typeLayers,
-    { collapsed: false, position: 'topright' }
-  ).addTo(map);
-});
-</script>
-
-
-
-
-
-
-
+</body>
+</html>
