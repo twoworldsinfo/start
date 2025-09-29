@@ -178,7 +178,7 @@
 <p>You can walk around Vidigal and Vidigal Beach completely safely at any time of day or night with your phone, jewelry, etc. Nothing will happen to you.</p>
 
 <p>To understand why, I need to elaborate a bit,  
-  <a id="expandLink" href="#" onclick="document.getElementById('more').style.display='block'; this.style.display='none'; return false;">
+  <a id="expandLink" href="#" onclick="toggleMore(); return false;">
     click here if you want to know more
   </a>:
 </p>
@@ -237,28 +237,30 @@
   <p>Just be aware that you should not film aside from the main road after all it is not a zoo but a home to ordinary people actually it is home to many artists and you will find a lot of graffiti and wall murals all over the favela.</p>
 
   <p>
-    <a href="#" onclick="document.getElementById('more').style.display='none'; document.getElementById('expandLink').style.display='inline'; return false;">
+    <a href="#" onclick="toggleMore(); return false;">
       click here to close the additional information
     </a>
   </p>
 </div>
+
 <script>
 function toggleMore() {
   var more = document.getElementById('more');
-  var links = document.querySelectorAll('.toggle-link');
-  if (more.style.display === 'none') {
+  var expandLink = document.getElementById('expandLink');
+  if (more.style.display === 'none' || more.style.display === '') {
     more.style.display = 'block';
-    links.forEach(function(l) {
-      l.textContent = 'Click here to close the additional information';
-    });
+    expandLink.textContent = 'click here to close the additional information';
   } else {
     more.style.display = 'none';
-    links.forEach(function(l) {
-      l.textContent = 'Click here if you want to know more';
-    });
+    expandLink.textContent = 'click here if you want to know more';
   }
 }
 </script>
+
+
+      No straight to the dangers that actually await you outside of Vidigal, and how to prevent them:
+
+      
         <li>Don't use any kind of expensive looking jewelry/watches.</li>
         <li>Keep your phone in your pocket unless you are aware of your surroundings (it is fine to use on the beach etc to take photos but be aware of your surroundings, and don't walk around mindlessly with phone in the hand).</li>
         <li>Backup your phone data, or even better leave it at home or bring a cheaper phone to use on the street.</li>
@@ -1038,6 +1040,7 @@ But if you see them you must try. Really good, my favorite is Calabresa (sausage
 <a href="https://twoworlds.info">Two World's private guide to Rio</a> © 2025 by <a href="https://airbnb.com/h/doismundos">Two World's Penthouse</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 </body>
 </html>
+
 
 
 
