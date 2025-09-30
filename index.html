@@ -1100,9 +1100,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-      
+      <script>
+// single-tap / click handler for the AI bubble
+document.addEventListener('DOMContentLoaded', () => {
+  const logoBubble = document.querySelector('.logo-bubble');
+  if (!logoBubble) return;
+
+  const bubble = logoBubble.querySelector('.bubble-text');
+  let hideTimer;
+
+  function showBubble() {
+    bubble.style.opacity       = '1';
+    bubble.style.pointerEvents = 'auto';
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(hideBubble, 5000);
+  }
+
+  function hideBubble() {
+    bubble.style.opacity       = '0';
+    bubble.style.pointerEvents = 'none';
+  }
+
+  // catch click or tap on the logo
+  logoBubble.addEventListener('click', e => {
+    e.preventDefault();    // prevent link navigation
+    e.stopPropagation();   // keep document click from immediately hiding
+    showBubble();
+  });
+
+  // hide when tapping anywhere else
+  document.addEventListener('click', () => {
+    hideBubble();
+    clearTimeout(hideTimer);
+  });
+});
+</script>
       </body>
 </html>
+
 
 
 
