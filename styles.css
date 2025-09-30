@@ -541,13 +541,13 @@ ul, ol {
   right: 1.5em;
   width: 3rem;
   height: 3rem;
-  background-color: #0077cc;
-  color: #ffffff;
+  background-color: rgba(0, 119, 204, 0.75); /* link-blue at 75% opacity */
+  color: #ffffff;                            /* arrow stays solid white */
   border: none;
   border-radius: 50%;
-  font-size: 1.25rem;
-  line-height: 3rem;
-  text-align: center;
+  font-size: 1.75rem;                        /* larger arrow */
+  line-height: 3rem;                         /* centers the arrow vertically */
+  text-align: center;                        /* centers the arrow horizontally */
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   opacity: 0;
@@ -560,4 +560,5 @@ ul, ol {
   opacity: 1;
   pointer-events: auto;
 }
+
 
