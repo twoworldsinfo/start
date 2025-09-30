@@ -534,9 +534,9 @@ ul, ol {
   }
 }
 
-/* show on hover or focus */
-.logo-bubble:hover .bubble-text,
-.logo-bubble:focus-within .bubble-text {
+/* only show on hover (desktop) */
+.logo-bubble:hover .bubble-text {
   opacity: 1;
   pointer-events: auto;
 }
+
