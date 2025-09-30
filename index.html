@@ -1081,9 +1081,29 @@ But if you see them you must try. Really good, my favorite is Calabresa (sausage
       });
   });
 </script>
+<button id="backToTop" aria-label="Back to top">↑</button>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('backToTop');
+  const showAfter = 150;
 
-</body>
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > showAfter) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+      
+      </body>
 </html>
+
 
 
 
