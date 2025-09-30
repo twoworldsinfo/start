@@ -464,12 +464,6 @@ ul, ol {
   }
 }
 
-/* 4) Reveal on hover or tap */
-.logo-bubble:hover .bubble-text,
-.logo-bubble:focus-within .bubble-text {
-  opacity: 1;
-  pointer-events: auto;
-}
 /* ─────────────────────────────────────────────
    1) Put .lang-switcher back in the header row
    ───────────────────────────────────────────── */
@@ -539,4 +533,5 @@ ul, ol {
   opacity: 1;
   pointer-events: auto;
 }
+
 
