@@ -1036,8 +1036,27 @@ But if you see them you must try. Really good, my favorite is Calabresa (sausage
   </script>
 
 <a href="https://twoworlds.info">Two World's private guide to Rio</a> © 2025 by <a href="https://airbnb.com/h/doismundos">Two World's Penthouse</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // grab current URL
+    const current = encodeURIComponent(window.location.href);
+
+    // for each <a data-tl="xx"> in .lang-switcher, build a translate URL
+    document
+      .querySelectorAll('.lang-switcher a[data-tl]')
+      .forEach(el => {
+        const tl = el.getAttribute('data-tl');
+        el.href   = `https://translate.google.com/translate?sl=en&tl=${tl}&u=${current}`;
+        el.target = '_blank';
+        el.rel    = 'noopener';
+      });
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
